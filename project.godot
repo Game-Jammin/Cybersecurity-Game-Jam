@@ -45,6 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Cybersecurity Game Jam"
+run/main_scene="res://ui/Screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
