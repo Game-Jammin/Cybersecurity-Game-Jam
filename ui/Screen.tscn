@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui/Screen.gd" type="Script" id=1]
 [ext_resource path="res://ui/email/EmailWindow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/Placeholders/Background.jpg" type="Texture" id=3]
+[ext_resource path="res://ui/Notification.gd" type="Script" id=4]
 
 [node name="Screen" type="Control"]
 anchor_right = 1.0
@@ -11,12 +13,90 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-text = "E-Mail"
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MailWindow" parent="." instance=ExtResource( 2 )]
-margin_left = -259.0
-margin_right = 260.0
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="Bottom Bar" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -49.9999
+margin_bottom = 6.10352e-05
+color = Color( 0.423529, 0.423529, 0.423529, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trash" type="Button" parent="."]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 115.0
+margin_bottom = 115.0
+text = "Trash"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Email" type="Button" parent="."]
+margin_left = 15.0
+margin_top = 165.0
+margin_right = 115.0
+margin_bottom = 265.0
+text = "E-Mail"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Notification" type="ColorRect" parent="Email"]
+visible = false
+margin_left = 80.0
+margin_top = -10.0
+margin_right = 110.0
+margin_bottom = 20.0
+color = Color( 1, 0, 0, 1 )
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Email/Notification"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "1"
+align = 1
+valign = 1
+
+[node name="Internet" type="Button" parent="."]
+margin_left = 15.0
+margin_top = 315.0
+margin_right = 115.0
+margin_bottom = 415.0
+text = "Internet"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game" type="Button" parent="."]
+margin_left = 15.0
+margin_top = 465.0
+margin_right = 115.0
+margin_bottom = 565.0
+text = "Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Windows" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MailWindow" parent="Windows" instance=ExtResource( 2 )]
+margin_left = -259.5
+margin_right = 259.5
+[connection signal="pressed" from="Email" to="." method="_on_Button_pressed"]

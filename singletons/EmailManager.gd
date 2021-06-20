@@ -5,10 +5,13 @@ signal new_email
 onready var email_folder = "res://emails"
 
 var emails = []
-var displayed_emails = []
+var current_emails = []
+
+var current_email = 0
 
 func _ready():
 	get_all_email_files()
+	new_email()
 
 # Get a list of all email files in the 
 func get_all_email_files():
@@ -36,7 +39,17 @@ func read_email_file(file_path):
 		emails.append(new_email)
 
 func new_email():
-	emit_signal("new_email")
+	var new_email = emails[current_email]
+	current_email = current_email + 1
+	current_emails.append(new_email)
+	emit_signal("new_email",new_email)
 	
 func remove_email():
 	pass
+	
+func new_email_num():
+	var num = 0
+	for email in current_emails:
+		if email.new:
+			num = num + 1
+	return num 
