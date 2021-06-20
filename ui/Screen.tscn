@@ -17,7 +17,6 @@ margin_bottom = 20.0
 text = "E-Mail"
 
 [node name="MailWindow" parent="." instance=ExtResource( 2 )]
-visible = false
 margin_left = -259.0
 margin_right = 260.0
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
