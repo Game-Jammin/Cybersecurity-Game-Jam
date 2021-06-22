@@ -1,8 +1,8 @@
-extends WindowDialog
+extends Control
 
 onready var email_line = "res://ui/email/EmailLine.tscn"
-onready var email_lines = get_node("Body/EmailList/VBoxContainer")
-onready var email_body = get_node("Body/EmailView/EmailBody")
+onready var email_lines = get_node("EmailList/VBoxContainer")
+onready var email_view = get_node("EmailView")
 
 var current_email
 var emails = []
@@ -29,7 +29,7 @@ func remove_email_line(id):
 	email_line.queue_free()
 
 func _on_email_line_pressed(email_line):
-	email_body.text = emails[email_line].body
+	email_view.load_email(emails[email_line])
 	switch_view()
 
 func update_email_list():
@@ -37,8 +37,8 @@ func update_email_list():
 		add_email_line(email)
 
 func switch_view():
-	$Body/EmailList.visible = !$Body/EmailList.visible
-	$Body/EmailView.visible = !$Body/EmailView.visible
+	$EmailList.visible = !$EmailList.visible
+	email_view.visible = !email_view.visible
 
 func _on_Back_pressed():
 	switch_view()

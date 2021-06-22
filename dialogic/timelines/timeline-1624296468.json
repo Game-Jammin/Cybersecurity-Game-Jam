@@ -1,0 +1,31 @@
+{
+	"events": [
+		{
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Welcome to your first day at your new job!"
+		},
+		{
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Recently we have been getting alot of phsings emails. I am going to go over some of the basics to help you identify them."
+		},
+		{
+			"emit_signal": "new_email",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hey look. There comes your first email! You must be popular"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1624296468.json",
+		"name": "Start"
+	}
+}

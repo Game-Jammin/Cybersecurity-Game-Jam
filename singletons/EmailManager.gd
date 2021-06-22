@@ -11,7 +11,6 @@ var current_email = 0
 
 func _ready():
 	get_all_email_files()
-	new_email()
 
 # Get a list of all email files in the 
 func get_all_email_files():

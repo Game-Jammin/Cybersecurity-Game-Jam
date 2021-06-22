@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/Window.gd" type="Script" id=1]
+
+[node name="GameWindow" type="Panel" groups=[
+"Windows",
+]]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -232.0
+margin_top = -169.0
+margin_right = 232.0
+margin_bottom = 169.0
+mouse_filter = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleBar" type="ColorRect" parent="."]
+anchor_right = 1.0
+margin_right = 3.05176e-05
+margin_bottom = 30.0
+color = Color( 0.227451, 0.227451, 0.227451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TitleBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "EMail"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="TitleBar"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -25.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = 15.0
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 30.0
+mouse_filter = 1
+[connection signal="gui_input" from="." to="." method="_on_Window_gui_input"]
+[connection signal="gui_input" from="TitleBar" to="." method="_on_TitleBar_gui_input"]
+[connection signal="pressed" from="TitleBar/Close" to="." method="_on_Close_pressed"]

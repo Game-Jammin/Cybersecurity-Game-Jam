@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui/Screen.gd" type="Script" id=1]
-[ext_resource path="res://ui/email/EmailWindow.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/popups/Popups.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/Placeholders/Background.jpg" type="Texture" id=3]
 [ext_resource path="res://ui/Notification.gd" type="Script" id=4]
 
@@ -96,7 +96,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MailWindow" parent="Windows" instance=ExtResource( 2 )]
-margin_left = -259.5
-margin_right = 259.5
-[connection signal="pressed" from="Email" to="." method="_on_Button_pressed"]
+[node name="Popups" parent="." instance=ExtResource( 2 )]
+[connection signal="pressed" from="Email" to="." method="_on_Email_pressed"]
+[connection signal="pressed" from="Internet" to="." method="_on_Internet_pressed"]
+[connection signal="pressed" from="Game" to="." method="_on_Game_pressed"]
