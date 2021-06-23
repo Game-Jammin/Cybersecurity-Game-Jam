@@ -14,6 +14,3 @@ func set_line_info(email_info):
 func update_labels():
 	$HBox/From.text = from
 	$HBox/Subject.text = subject
-
-func open_email():
-	pass

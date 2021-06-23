@@ -62,4 +62,3 @@ margin_top = 8.0
 margin_right = 391.0
 margin_bottom = 22.0
 text = "3:16 PM"
-[connection signal="pressed" from="HBox/Controls/Delete" to="." method="_on_Delete_pressed"]
