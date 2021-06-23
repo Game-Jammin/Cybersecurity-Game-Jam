@@ -5,7 +5,6 @@ signal new_email
 onready var email_folder = "res://emails"
 
 var emails = []
-var current_emails = []
 
 var current_email = 0
 
@@ -34,25 +33,24 @@ func read_email_file(file_path):
 	var result_json = JSON.parse(text_json)
 	if result_json.error == OK:  # If parse OK
 		var new_email = result_json.result
+		new_email.received = false
 		new_email.new = true
+		new_email.spam = false
+		new_email.deleted = false
 		emails.append(new_email)
 
-func new_email():
-	var new_email = emails[current_email]
-	current_email = current_email + 1
-	current_emails.append(new_email)
-	emit_signal("new_email",new_email)
-	
-func remove_email():
-	pass
+func receive_email():
+	if current_email < emails.size():
+		emails[current_email].received = true
+		current_email = current_email + 1
 	
 func new_email_num():
 	var num = 0
-	for email in current_emails:
-		if email.new:
+	for email in emails:
+		if email.new and email.received:
 			num = num + 1
 	return num 
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		new_email()
+		receive_email()

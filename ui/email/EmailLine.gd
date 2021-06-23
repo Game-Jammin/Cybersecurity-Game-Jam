@@ -1,16 +1,12 @@
 extends Button
 
-var from
-var subject
-var body
+var email
 
-func set_line_info(email_info):
-	from = email_info.from
-	subject = email_info.subject
-	body = email_info.body
-	
-	update_labels()
+func update_line():
+	visible = email.received
+	$HBox/New.visible = email.new
+	$HBox/From.text = email.from
+	$HBox/Subject.text = email.subject
 
-func update_labels():
-	$HBox/From.text = from
-	$HBox/Subject.text = subject
+func _process(delta):
+	update_line()
