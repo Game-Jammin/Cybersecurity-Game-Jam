@@ -10,7 +10,6 @@ var emails = []
 func _ready():
 	# connected signal for when a new email is added to the list
 	EmailManager.connect("new_email", self, "_on_new_email")
-	
 	update_email_list()
 
 func _on_new_email(new_email):
@@ -30,15 +29,28 @@ func remove_email_line(id):
 
 func _on_email_line_pressed(email_line):
 	email_view.load_email(emails[email_line])
-	switch_view()
+	show_single_email()
 
 func update_email_list():
+	for line in email_lines.get_children():
+		line.queue_free()
 	for email in EmailManager.current_emails:
 		add_email_line(email)
 
-func switch_view():
-	$EmailList.visible = !$EmailList.visible
-	email_view.visible = !email_view.visible
+func show_single_email():
+	$EmailList.visible = false
+	email_view.visible = true
+
+func show_email_list():
+	$EmailList.visible = true
+	email_view.visible = false
 
 func _on_Back_pressed():
-	switch_view()
+	show_email_list()
+
+func _on_Spam_pressed():
+	pass # Replace with function body.
+
+func _on_Delete_pressed():
+	update_email_list()
+	show_email_list()

@@ -21,17 +21,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bottom Bar" type="ColorRect" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -49.9999
-margin_bottom = 6.10352e-05
-color = Color( 0.423529, 0.423529, 0.423529, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Trash" type="Button" parent="."]
 margin_left = 15.0
 margin_top = 15.0
@@ -97,6 +86,17 @@ __meta__ = {
 }
 
 [node name="Popups" parent="." instance=ExtResource( 2 )]
+
+[node name="Bottom Bar" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -49.9999
+margin_bottom = 6.10352e-05
+color = Color( 0.423529, 0.423529, 0.423529, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Email" to="." method="_on_Email_pressed"]
 [connection signal="pressed" from="Internet" to="." method="_on_Internet_pressed"]
 [connection signal="pressed" from="Game" to="." method="_on_Game_pressed"]
