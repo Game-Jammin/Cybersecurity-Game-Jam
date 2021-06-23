@@ -16,7 +16,7 @@ func _on_dialog_end(timeline_name):
 	
 func _on_dialogic_signal(signal_name):
 	if signal_name == "new_email":
-		EmailManager.new_email()
+		EmailManager.receive_email()
 
 func _on_Email_pressed():
 	if already_open("EmailWindow"):

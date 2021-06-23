@@ -36,7 +36,7 @@ func read_email_file(file_path):
 		new_email.received = false
 		new_email.new = true
 		new_email.spam = false
-		new_email.deleted = false
+		new_email.removed = false
 		emails.append(new_email)
 
 func receive_email():

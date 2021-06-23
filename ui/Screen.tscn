@@ -21,27 +21,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Trash" type="Button" parent="."]
-margin_left = 15.0
-margin_top = 15.0
-margin_right = 115.0
-margin_bottom = 115.0
+[node name="Buttons" type="GridContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 320.0
+margin_bottom = 495.0
+custom_constants/vseparation = 50
+custom_constants/hseparation = 50
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trash" type="Button" parent="Buttons"]
+margin_right = 125.0
+margin_bottom = 125.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Trash"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Email" type="Button" parent="."]
-margin_left = 15.0
-margin_top = 165.0
-margin_right = 115.0
-margin_bottom = 265.0
+[node name="Email" type="Button" parent="Buttons"]
+margin_left = 175.0
+margin_right = 300.0
+margin_bottom = 125.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "E-Mail"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Notification" type="ColorRect" parent="Email"]
+[node name="Notification" type="ColorRect" parent="Buttons/Email"]
 visible = false
 margin_left = 80.0
 margin_top = -10.0
@@ -50,29 +63,43 @@ margin_bottom = 20.0
 color = Color( 1, 0, 0, 1 )
 script = ExtResource( 4 )
 
-[node name="Label" type="Label" parent="Email/Notification"]
+[node name="Label" type="Label" parent="Buttons/Email/Notification"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "1"
 align = 1
 valign = 1
 
-[node name="Internet" type="Button" parent="."]
-margin_left = 15.0
-margin_top = 315.0
-margin_right = 115.0
-margin_bottom = 415.0
+[node name="Internet" type="Button" parent="Buttons"]
+margin_top = 175.0
+margin_right = 125.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Internet"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Game" type="Button" parent="."]
-margin_left = 15.0
-margin_top = 465.0
-margin_right = 115.0
-margin_bottom = 565.0
+[node name="Game" type="Button" parent="Buttons"]
+margin_left = 175.0
+margin_top = 175.0
+margin_right = 300.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Notes" type="Button" parent="Buttons"]
+margin_top = 350.0
+margin_right = 125.0
+margin_bottom = 475.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Notes"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -97,6 +124,6 @@ color = Color( 0.423529, 0.423529, 0.423529, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Email" to="." method="_on_Email_pressed"]
-[connection signal="pressed" from="Internet" to="." method="_on_Internet_pressed"]
-[connection signal="pressed" from="Game" to="." method="_on_Game_pressed"]
+[connection signal="pressed" from="Buttons/Email" to="." method="_on_Email_pressed"]
+[connection signal="pressed" from="Buttons/Internet" to="." method="_on_Internet_pressed"]
+[connection signal="pressed" from="Buttons/Game" to="." method="_on_Game_pressed"]

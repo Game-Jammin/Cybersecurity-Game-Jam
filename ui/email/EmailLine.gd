@@ -3,7 +3,7 @@ extends Button
 var email
 
 func update_line():
-	visible = email.received
+	visible = (email.received and !email.removed)
 	$HBox/New.visible = email.new
 	$HBox/From.text = email.from
 	$HBox/Subject.text = email.subject

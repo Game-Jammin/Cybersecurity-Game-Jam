@@ -11,8 +11,7 @@ func _ready():
 
 func create_email_list():
 	for email in EmailManager.emails:
-		if not email.deleted:
-			add_email_line(email)
+		add_email_line(email)
 
 func add_email_line(new_email):
 	var new_email_line = load(email_line).instance()
