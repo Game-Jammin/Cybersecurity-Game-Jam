@@ -52,3 +52,7 @@ func new_email_num():
 		if email.new:
 			num = num + 1
 	return num 
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		new_email()

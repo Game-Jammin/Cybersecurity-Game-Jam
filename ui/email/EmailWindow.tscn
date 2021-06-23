@@ -160,4 +160,6 @@ __meta__ = {
 [connection signal="gui_input" from="." to="." method="_on_Window_gui_input"]
 [connection signal="gui_input" from="TitleBar" to="." method="_on_TitleBar_gui_input"]
 [connection signal="pressed" from="TitleBar/Close" to="." method="_on_Close_pressed"]
-[connection signal="pressed" from="Body/EmailView/Options/Back" to="Body" method="_on_Back_pressed"]
+[connection signal="pressed" from="Body/EmailView/Options/Back" to="Body/EmailView" method="_on_Back_pressed"]
+[connection signal="pressed" from="Body/EmailView/Options/Spam" to="Body/EmailView" method="_on_Spam_pressed"]
+[connection signal="pressed" from="Body/EmailView/Options/Delete" to="Body/EmailView" method="_on_Delete_pressed"]
