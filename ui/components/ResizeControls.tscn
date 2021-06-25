@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/components/ResizeControls.gd" type="Script" id=1]
+
+[node name="ResizeControls" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HorizonalScale" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_bottom = -5.0
+mouse_default_cursor_shape = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VerticalScale" type="Control" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -5.0
+margin_right = -5.0
+mouse_default_cursor_shape = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scale" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_top = -5.0
+mouse_default_cursor_shape = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="HorizonalScale" to="." method="_on_HorizonalScale_gui_input"]
+[connection signal="gui_input" from="VerticalScale" to="." method="_on_VerticalScale_gui_input"]
+[connection signal="gui_input" from="Scale" to="." method="_on_Scale_gui_input"]

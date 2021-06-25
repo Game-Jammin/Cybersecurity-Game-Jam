@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ui/Screen.gd" type="Script" id=1]
 [ext_resource path="res://ui/popups/Popups.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/Placeholders/Background.jpg" type="Texture" id=3]
-[ext_resource path="res://ui/Notification.gd" type="Script" id=4]
+[ext_resource path="res://ui/components/Notification.gd" type="Script" id=4]
+[ext_resource path="res://ui/windows/NotesWindow.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/windows/EmailWindow.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/windows/InternetWindow.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/windows/GameWindow.tscn" type="PackedScene" id=8]
 
 [node name="Screen" type="Control"]
 anchor_right = 1.0
@@ -112,6 +116,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="EmailWindow" parent="Windows" instance=ExtResource( 6 )]
+visible = false
+
+[node name="GameWindow" parent="Windows" instance=ExtResource( 8 )]
+visible = false
+
+[node name="InternetWindow" parent="Windows" instance=ExtResource( 7 )]
+visible = false
+
+[node name="NotesWindow" parent="Windows" instance=ExtResource( 5 )]
+visible = false
+
 [node name="Popups" parent="." instance=ExtResource( 2 )]
 
 [node name="Bottom Bar" type="ColorRect" parent="."]
@@ -127,3 +143,4 @@ __meta__ = {
 [connection signal="pressed" from="Buttons/Email" to="." method="_on_Email_pressed"]
 [connection signal="pressed" from="Buttons/Internet" to="." method="_on_Internet_pressed"]
 [connection signal="pressed" from="Buttons/Game" to="." method="_on_Game_pressed"]
+[connection signal="pressed" from="Buttons/Notes" to="." method="_on_Notes_pressed"]

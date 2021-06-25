@@ -1,9 +1,5 @@
 extends Control
 
-var mail_window = 'res://ui/email/EmailWindow.tscn'
-var game_window = 'res://ui/game/GameWindow.tscn'
-var internet_window = 'res://ui/internet/InternetWindow.tscn'
-
 func _ready():
 	pass
 	#var new_dialog = Dialogic.start("Start", false)
@@ -19,28 +15,13 @@ func _on_dialogic_signal(signal_name):
 		EmailManager.receive_email()
 
 func _on_Email_pressed():
-	if already_open("EmailWindow"):
-		return
-	var new_window = load(mail_window).instance()
-	
-	$Windows.add_child(new_window)
+	$Windows/EmailWindow.visible = true
 
 func _on_Game_pressed():
-	if already_open("GameWindow"):
-		return
-	var new_window = load(game_window).instance()
-	
-	$Windows.add_child(new_window)
+	$Windows/GameWindow.visible = true
 
 func _on_Internet_pressed():
-	if already_open("InternetWindow"):
-		return
-	var new_window = load(internet_window).instance()
-	
-	$Windows.add_child(new_window)
+	$Windows/InternetWindow.visible = true
 
-func already_open(window_name):
-	for window in get_tree().get_nodes_in_group("Windows"):
-		if window.name == window_name:
-			return true
-	return false
+func _on_Notes_pressed():
+	$Windows/NotesWindow.visible = true

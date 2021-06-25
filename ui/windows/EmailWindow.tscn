@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui/components/TitleBar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/components/ResizeControls.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/Window.gd" type="Script" id=3]
+[ext_resource path="res://ui/email/EmailContent.tscn" type="PackedScene" id=4]
+
+[sub_resource type="GradientTexture" id=1]
+
+[node name="EmailWindow" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -441.0
+margin_top = -294.0
+margin_right = 441.0
+margin_bottom = 294.0
+rect_min_size = Vector2( 400, 400 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleBar" parent="." instance=ExtResource( 1 )]
+window_name = "E-Mail"
+
+[node name="EmailContent" parent="." instance=ExtResource( 4 )]
+margin_left = 5.0
+margin_top = 35.0
+margin_right = -5.0
+margin_bottom = -5.0
+
+[node name="ResizeControls" parent="." instance=ExtResource( 2 )]
+[connection signal="gui_input" from="." to="." method="_on_Window_gui_input"]

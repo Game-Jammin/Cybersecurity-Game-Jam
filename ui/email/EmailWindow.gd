@@ -2,11 +2,11 @@ extends Control
 
 onready var email_line = "res://ui/email/EmailLine.tscn"
 onready var email_lines = get_node("EmailList/VBoxContainer")
-onready var email_view = get_node("EmailView")
 
 var current_email
 
 func _ready():
+	show_email_list()
 	create_email_list()
 
 func create_email_list():
@@ -20,16 +20,16 @@ func add_email_line(new_email):
 	email_lines.add_child(new_email_line)
 
 func _on_email_line_pressed(email):
-	email_view.load_email(email)
+	$EmailView.load_email(email)
 	show_single_email()
 
 func show_single_email():
 	$EmailList.visible = false
-	email_view.visible = true
+	$EmailView.visible = true
 
 func show_email_list():
 	$EmailList.visible = true
-	email_view.visible = false
+	$EmailView.visible = false
 
 func _on_Back_pressed():
 	show_email_list()

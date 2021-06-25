@@ -35,6 +35,16 @@ _global_script_classes=[ {
 "path": "res://addons/dialogic/Other/DialogicUtil.gd"
 }, {
 "base": "Control",
+"class": "ResizeControls",
+"language": "GDScript",
+"path": "res://ui/components/ResizeControls.gd"
+}, {
+"base": "ColorRect",
+"class": "TitleBar",
+"language": "GDScript",
+"path": "res://ui/components/TitleBar.gd"
+}, {
+"base": "Control",
 "class": "Window",
 "language": "GDScript",
 "path": "res://ui/Window.gd"
@@ -45,6 +55,8 @@ _global_script_class_icons={
 "DialogicDefinitionsUtil": "",
 "DialogicResources": "",
 "DialogicUtil": "",
+"ResizeControls": "",
+"TitleBar": "",
 "Window": ""
 }
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ui/email/EmailLine.gd" type="Script" id=1]
+
+[sub_resource type="ImageTexture" id=1]
 
 [node name="EmailLine" type="Button"]
 margin_right = 391.0
@@ -13,9 +15,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBox" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 5.0
+margin_right = -5.0
 size_flags_horizontal = 3
 custom_constants/separation = 10
 __meta__ = {
@@ -45,9 +57,11 @@ text = "How does it handle a really long subject string?"
 clip_text = true
 
 [node name="Control" type="Control" parent="HBox"]
-margin_left = 391.0
-margin_right = 391.0
+visible = false
+margin_left = 361.0
+margin_right = 381.0
 margin_bottom = 30.0
+rect_min_size = Vector2( 20, 0 )
 size_flags_horizontal = 0
 
 [node name="Delete" type="Button" parent="HBox/Control"]
@@ -57,7 +71,6 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -10.0
 margin_top = -10.0
-margin_right = 10.0
 margin_bottom = 10.0
 size_flags_vertical = 0
 text = "X"

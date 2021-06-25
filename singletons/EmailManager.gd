@@ -4,6 +4,8 @@ signal new_email
 
 onready var email_folder = "res://emails"
 
+var issue_flag = "<flag>"
+
 var emails = []
 
 var current_email = 0
@@ -32,12 +34,29 @@ func read_email_file(file_path):
 	file.close()
 	var result_json = JSON.parse(text_json)
 	if result_json.error == OK:  # If parse OK
-		var new_email = result_json.result
-		new_email.received = false
-		new_email.new = true
-		new_email.spam = false
-		new_email.removed = false
-		emails.append(new_email)
+		generate_new_email(result_json.result)
+
+# parse the json data and genete and email object
+func generate_new_email(json):
+	var new_email = json
+	new_email.received = false
+	new_email.new = true
+	new_email.spam = false
+	new_email.removed = false
+	
+	#find <flag> in string and assign to email issues list
+	new_email.issues = []
+	if issue_flag in new_email.from:
+		new_email.issues.append("from")
+	if issue_flag in new_email.subject:
+		new_email.issues.append("subject")
+	
+	# remove the <flag> from displayed text
+	new_email.from = new_email.from.replace("<flag>", "")
+	new_email.subject = new_email.subject.replace("<flag>", "")
+	new_email.body = new_email.body.replace("<flag>", "")
+	
+	emails.append(new_email)
 
 func receive_email():
 	if current_email < emails.size():
