@@ -1,0 +1,34 @@
+[gd_scene format=2]
+
+[node name="Attachment" type="Control"]
+margin_left = 402.0
+margin_right = 502.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -58.5
+margin_top = -23.0
+margin_right = 58.5
+margin_bottom = -9.00001
+text = "Attachment Name"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Attachment Test" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -35.0
+margin_right = 35.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

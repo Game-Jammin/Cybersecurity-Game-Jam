@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ui/email/EmailView.gd" type="Script" id=1]
 [ext_resource path="res://ui/email/EmailWindow.gd" type="Script" id=2]
+[ext_resource path="res://ui/email/Attachment.tscn" type="PackedScene" id=3]
 
 [node name="EmailContent" type="Control"]
 anchor_right = 1.0
@@ -172,137 +173,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="EmailView/EmailBody/Container/Attachments"]
-margin_left = 402.0
-margin_right = 502.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+[node name="Attachment" parent="EmailView/EmailBody/Container/Attachments" instance=ExtResource( 3 )]
+margin_left = 465.0
+margin_right = 565.0
 
-[node name="Label" type="Label" parent="EmailView/EmailBody/Container/Attachments/Control"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -58.5
-margin_top = -23.0
-margin_right = 58.5
-margin_bottom = -9.00001
-text = "Attachment Name"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Attachment2" parent="EmailView/EmailBody/Container/Attachments" instance=ExtResource( 3 )]
+margin_left = 590.0
+margin_right = 690.0
 
-[node name="Attachment Test" type="ColorRect" parent="EmailView/EmailBody/Container/Attachments/Control"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -35.0
-margin_right = 35.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 70, 70 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control2" type="Control" parent="EmailView/EmailBody/Container/Attachments"]
-margin_left = 527.0
-margin_right = 627.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
-
-[node name="Label" type="Label" parent="EmailView/EmailBody/Container/Attachments/Control2"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -58.5
-margin_top = -23.0
-margin_right = 58.5
-margin_bottom = -9.00001
-text = "Attachment Name"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Attachment Test" type="ColorRect" parent="EmailView/EmailBody/Container/Attachments/Control2"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -35.0
-margin_right = 35.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 70, 70 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control3" type="Control" parent="EmailView/EmailBody/Container/Attachments"]
-margin_left = 652.0
-margin_right = 752.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
-
-[node name="Label" type="Label" parent="EmailView/EmailBody/Container/Attachments/Control3"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -58.5
-margin_top = -23.0
-margin_right = 58.5
-margin_bottom = -9.00001
-text = "Attachment Name"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Attachment Test" type="ColorRect" parent="EmailView/EmailBody/Container/Attachments/Control3"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -35.0
-margin_right = 35.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 70, 70 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control4" type="Control" parent="EmailView/EmailBody/Container/Attachments"]
-margin_left = 777.0
-margin_right = 877.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
-
-[node name="Label" type="Label" parent="EmailView/EmailBody/Container/Attachments/Control4"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -58.5
-margin_top = -23.0
-margin_right = 58.5
-margin_bottom = -9.00001
-text = "Attachment Name"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Attachment Test" type="ColorRect" parent="EmailView/EmailBody/Container/Attachments/Control4"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -35.0
-margin_right = 35.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 70, 70 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Attachment3" parent="EmailView/EmailBody/Container/Attachments" instance=ExtResource( 3 )]
+margin_left = 715.0
+margin_right = 815.0
 [connection signal="pressed" from="EmailView/Options/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="EmailView/Options/Spam" to="." method="_on_Spam_pressed"]
 [connection signal="pressed" from="EmailView/Options/Delete" to="." method="_on_Delete_pressed"]
