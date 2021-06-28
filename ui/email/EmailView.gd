@@ -1,15 +1,15 @@
 extends Control
 
-onready var from_text = get_node("HeaderInfo/From")
-onready var subject_text = get_node("HeaderInfo/Subject")
+onready var from = get_node("HeaderInfo/From")
+onready var subject = get_node("HeaderInfo/Subject")
 onready var body_text = get_node("EmailBody/Container/BodyText")
 
 var selected = []
 
 func load_email(email):
 	email.new = false
-	from_text.text = email.from
-	subject_text.text = email.subject
+	from.get_node("Text").text = email.from
+	subject.get_node("Text").text = email.subject
 	body_text.text = email.body
 	print (email.issues)
 
@@ -40,7 +40,7 @@ func _on_Subject_gui_input(event):
 
 func update_selected_ui():
 	# from selected
-	from_text.get_node("Select").visible = "from" in selected
+	from.get_node("Select").visible = "from" in selected
 	
 	# subject selected
-	subject_text.get_node("Select").visible = "subject" in selected
+	subject.get_node("Select").visible = "subject" in selected

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui/email/EmailView.gd" type="Script" id=1]
 [ext_resource path="res://ui/email/EmailWindow.gd" type="Script" id=2]
 [ext_resource path="res://ui/email/Attachment.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/Placeholders/Select.png" type="Texture" id=4]
 
 [node name="EmailContent" type="Control"]
 anchor_right = 1.0
@@ -76,8 +77,9 @@ anchor_top = 0.043
 anchor_right = 0.07
 anchor_bottom = 0.09
 margin_top = 0.33
-margin_right = 0.400002
-margin_bottom = -0.100002
+margin_right = 0.400009
+margin_bottom = 10.9
+custom_constants/separation = 15
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -93,9 +95,9 @@ __meta__ = {
 }
 
 [node name="Subject" type="Label" parent="EmailView/HeaderTitles"]
-margin_top = 18.0
+margin_top = 29.0
 margin_right = 90.0
-margin_bottom = 32.0
+margin_bottom = 43.0
 mouse_filter = 1
 text = "Subject:"
 align = 2
@@ -105,16 +107,27 @@ anchor_left = 0.078
 anchor_top = 0.043
 anchor_right = 1.0
 anchor_bottom = 0.09
-margin_left = 0.159996
+margin_left = -7.84
 margin_top = 0.33
-margin_bottom = -30.1
+margin_bottom = 12.9
+custom_constants/separation = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="From" type="Label" parent="EmailView/HeaderInfo"]
-margin_right = 1180.0
-margin_bottom = 14.0
+[node name="From" type="Control" parent="EmailView/HeaderInfo"]
+margin_right = 1188.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="Text" type="Label" parent="EmailView/HeaderInfo/From"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 5.0
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
 mouse_filter = 1
 text = "From:"
 clip_text = true
@@ -122,32 +135,58 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Select" type="ColorRect" parent="EmailView/HeaderInfo/From"]
+[node name="Select" type="NinePatchRect" parent="EmailView/HeaderInfo/From"]
+self_modulate = Color( 1, 0, 0, 1 )
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -5.0
-mouse_filter = 2
-color = Color( 0.568627, 0, 0, 1 )
+texture = ExtResource( 4 )
+draw_center = false
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Subject" type="Label" parent="EmailView/HeaderInfo"]
-margin_top = 18.0
-margin_right = 1180.0
-margin_bottom = 32.0
-mouse_filter = 1
-text = "Subject:"
-clip_text = true
+[node name="Subject" type="Control" parent="EmailView/HeaderInfo"]
+margin_top = 25.0
+margin_right = 1188.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 0, 20 )
 
-[node name="Select" type="ColorRect" parent="EmailView/HeaderInfo/Subject"]
+[node name="Text" type="Label" parent="EmailView/HeaderInfo/Subject"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 5.0
+margin_top = -7.0
+margin_right = -10.0
+margin_bottom = 7.0
+mouse_filter = 1
+text = "From:"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Select" type="NinePatchRect" parent="EmailView/HeaderInfo/Subject"]
+self_modulate = Color( 1, 0, 0, 1 )
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -5.0
-mouse_filter = 2
-color = Color( 0.568627, 0, 0, 1 )
+margin_left = -0.225952
+margin_right = -5.22595
+texture = ExtResource( 4 )
+draw_center = false
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
