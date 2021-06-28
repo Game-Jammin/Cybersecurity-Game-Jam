@@ -122,6 +122,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Select" type="ColorRect" parent="EmailView/HeaderInfo/From"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -5.0
+mouse_filter = 2
+color = Color( 0.568627, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Subject" type="Label" parent="EmailView/HeaderInfo"]
 margin_top = 18.0
 margin_right = 1180.0
@@ -129,6 +140,17 @@ margin_bottom = 32.0
 mouse_filter = 1
 text = "Subject:"
 clip_text = true
+
+[node name="Select" type="ColorRect" parent="EmailView/HeaderInfo/Subject"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -5.0
+mouse_filter = 2
+color = Color( 0.568627, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="EmailBody" type="ScrollContainer" parent="EmailView"]
 anchor_right = 1.0
