@@ -19,7 +19,6 @@ func load_email(email):
 	clear_body_lines()
 	
 	fill_body_lines(email.body_lines)
-	print ("file")
 
 func clear_body_lines():
 	for line in body_text.get_children():

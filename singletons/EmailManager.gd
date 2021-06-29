@@ -39,8 +39,8 @@ func read_email_file(file_path):
 		generate_new_email(result_json.result)
 
 # parse the json data and genete and email object
-func generate_new_email(json):	
-	var new_email = email.duplicate()
+func generate_new_email(json):
+	var new_email = email.duplicate(true)
 	
 	# Test if from and subject have issue flag
 	if issue_flag in json.from:
@@ -55,7 +55,6 @@ func generate_new_email(json):
 	# Loop though body lines and remove flags and add to issue list
 	var line_number = 0
 	for line in json.body.split('\n'):
-		print (line)
 		if issue_flag in line:
 			new_email.issues.append(line_number)
 		new_email.body_lines.append(line.replace("<flag>", ""))
