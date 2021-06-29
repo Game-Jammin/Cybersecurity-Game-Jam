@@ -24,4 +24,4 @@ func _on_TitleBar_gui_input(event):
 				dragging = false
 
 func _on_Close_pressed():
-	get_parent().visible = false
+	get_parent()._on_Close_pressed()

@@ -14,6 +14,11 @@ func _ready():
 	$Tween.start()
 
 func _on_Close_pressed():
+	$Tween.interpolate_property(self, "rect_scale", Vector2(1,1), Vector2(0,0), .1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$Tween.start()
+	$Tween.connect('tweet_all_completed', self, 'close_window')
+
+func close_window():
 	queue_free()
 
 func _process(delta):
