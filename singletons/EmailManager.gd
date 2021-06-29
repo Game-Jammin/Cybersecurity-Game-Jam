@@ -56,7 +56,7 @@ func generate_new_email(json):
 	var line_number = 0
 	for line in json.body.split('\n'):
 		if issue_flag in line:
-			new_email.issues.append(line_number)
+			new_email.issues.append('line' + str(line_number))
 		new_email.body_lines.append(line.replace("<flag>", ""))
 		line_number = line_number + 1
 	
@@ -64,7 +64,7 @@ func generate_new_email(json):
 	var attachemnt_number = 0
 	for attachment in json.attachments:
 		if issue_flag in attachment:
-			new_email.issues.append(line_number)
+			new_email.issues.append('attachment' + str(attachemnt_number))
 		new_email.attachments.append(attachment.replace("<flag>", ""))
 		attachemnt_number = attachemnt_number + 1
 	
