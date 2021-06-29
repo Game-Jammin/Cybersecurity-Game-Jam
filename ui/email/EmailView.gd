@@ -16,27 +16,28 @@ func load_email(email):
 	from.get_node("Text").text = email.from
 	subject.get_node("Text").text = email.subject
 
-	clear_body()
+	clear_body_lines()
 	
-	fill_body(email.body)
+	fill_body_lines(email.body_lines)
+	print ("file")
 
-func clear_body():
+func clear_body_lines():
 	for line in body_text.get_children():
 		line.queue_free()
 
-func fill_body(body):
-	var num = 0
-	for line in body.split('\n'):
+func fill_body_lines(body_lines):
+	var line_number = 0
+	for line in body_lines:
 		var new_line = Label.new()
 		new_line.set_text(line)
 		new_line.set_mouse_filter(MOUSE_FILTER_STOP)
-		new_line.name = str(num)
+		new_line.name = str(line_number)
 		# Add input event listener to new object
-		new_line.connect("gui_input", self, "_on_gui_input", [num])
+		new_line.connect("gui_input", self, "_on_gui_input", [line_number])
 		body_text.add_child(new_line)
-		num = num + 1
+		line_number = line_number + 1
 
-func _process(delta):
+func _process(_delta):
 	$Options/Delete.disabled = selected.size() == 0
 	update_selected_ui()
 
@@ -49,7 +50,7 @@ func _on_gui_input(event, element):
 
 func select(element):
 	if element in selected:
-		selected.remove(selected.bsearch(element))
+		selected.erase(element)
 	else:
 		selected.append(element)
 
@@ -59,3 +60,9 @@ func update_selected_ui():
 	
 	# subject selected
 	subject.get_node("Select").visible = "subject" in selected
+
+func _on_Back_pressed():
+	get_parent().show_email_list()
+
+func _on_Delete_pressed():
+	get_parent().show_email_list()

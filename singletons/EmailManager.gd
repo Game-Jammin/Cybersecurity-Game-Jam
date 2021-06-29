@@ -7,6 +7,8 @@ onready var email_folder = "res://emails"
 var issue_flag = "<flag>"
 
 var emails = []
+var email = {'received': false, 'new': true, 'spam': false, 'removed': false,
+ 'from': '', 'subject': '', 'body_lines': [], 'attachments': [], 'issues': []}
 
 var current_email = 0
 
@@ -37,24 +39,35 @@ func read_email_file(file_path):
 		generate_new_email(result_json.result)
 
 # parse the json data and genete and email object
-func generate_new_email(json):
-	var new_email = json
-	new_email.received = false
-	new_email.new = true
-	new_email.spam = false
-	new_email.removed = false
+func generate_new_email(json):	
+	var new_email = email.duplicate()
 	
-	#find <flag> in string and assign to email issues list
-	new_email.issues = []
-	if issue_flag in new_email.from:
+	# Test if from and subject have issue flag
+	if issue_flag in json.from:
 		new_email.issues.append("from")
-	if issue_flag in new_email.subject:
+	if issue_flag in json.subject:
 		new_email.issues.append("subject")
 	
-	# remove the <flag> from displayed text
-	new_email.from = new_email.from.replace("<flag>", "")
-	new_email.subject = new_email.subject.replace("<flag>", "")
-	new_email.body = new_email.body.replace("<flag>", "")
+	# Remove flags and set from and subject
+	new_email.from = json.from.replace("<flag>", "")
+	new_email.subject = json.subject.replace("<flag>", "")
+	
+	# Loop though body lines and remove flags and add to issue list
+	var line_number = 0
+	for line in json.body.split('\n'):
+		print (line)
+		if issue_flag in line:
+			new_email.issues.append(line_number)
+		new_email.body_lines.append(line.replace("<flag>", ""))
+		line_number = line_number + 1
+	
+	# Loop through email attachemnts, removing flags and adding to issue list
+	var attachemnt_number = 0
+	for attachment in json.attachments:
+		if issue_flag in attachment:
+			new_email.issues.append(line_number)
+		new_email.attachments.append(attachment.replace("<flag>", ""))
+		attachemnt_number = attachemnt_number + 1
 	
 	emails.append(new_email)
 

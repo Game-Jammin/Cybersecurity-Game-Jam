@@ -1,9 +1,10 @@
 {
 	"from": "<flag>12341231@badmail.com<flag>",
-	"subject": "Test subject 3",
+	"subject": "Test subject 4",
 	"body": "Hi [Name],
 	<flag>please send me your SIN number<flag>
 Thank you,
 
 Joe",
+"attachments": []
 }
