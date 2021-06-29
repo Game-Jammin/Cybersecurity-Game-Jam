@@ -70,6 +70,7 @@ config/icon="res://icon.png"
 
 DialogicSingleton="*res://addons/dialogic/Other/DialogicSingleton.gd"
 EmailManager="*res://singletons/EmailManager.gd"
+GameManager="*res://singletons/GameManager.gd"
 
 [display]
 
