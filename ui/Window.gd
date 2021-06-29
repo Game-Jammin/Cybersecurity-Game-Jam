@@ -23,7 +23,7 @@ func _on_Window_gui_input(event):
 func _on_Close_pressed():
 	tween.interpolate_property(self, "rect_scale", Vector2(1,1), Vector2(0,0), .1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
-	tween.connect('tweet_all_completed', self, 'close_window')
+	tween.connect('tween_all_completed', self, 'close_window')
 
 func close_window():
 	queue_free()

@@ -17,7 +17,6 @@ func _on_dialogic_signal(signal_name):
 		EmailManager.receive_email()
 
 func _on_Button_pressed(button_name):
-	print (button_name)
 	# return if window is already open
 	if $Windows.has_node(button_name):
 		return

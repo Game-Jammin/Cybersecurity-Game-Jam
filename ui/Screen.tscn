@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ui/Screen.gd" type="Script" id=1]
 [ext_resource path="res://ui/popups/Popups.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/Placeholders/Background.jpg" type="Texture" id=3]
 [ext_resource path="res://ui/components/Notification.gd" type="Script" id=4]
+[ext_resource path="res://ui/windows/Menu.tscn" type="PackedScene" id=5]
 
 [node name="Screen" type="Control"]
 anchor_right = 1.0
@@ -94,6 +95,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Menu" type="Button" parent="Buttons"]
+margin_top = 400.0
+margin_right = 80.0
+margin_bottom = 480.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Windows" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -101,6 +114,8 @@ mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MenuWindow" parent="Windows" instance=ExtResource( 5 )]
 
 [node name="Popups" parent="." instance=ExtResource( 2 )]
 

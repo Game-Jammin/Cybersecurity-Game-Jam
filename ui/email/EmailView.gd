@@ -62,7 +62,6 @@ func _on_gui_input(event, element):
 		if event.button_index == BUTTON_LEFT:
 			if event.pressed:
 				select(element)
-				print (selected)
 
 func select(element):
 	if element in selected:

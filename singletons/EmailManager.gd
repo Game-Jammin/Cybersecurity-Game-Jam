@@ -1,7 +1,5 @@
 extends Node
 
-signal new_email
-
 onready var email_folder = "res://emails"
 
 var issue_flag = "<flag>"
