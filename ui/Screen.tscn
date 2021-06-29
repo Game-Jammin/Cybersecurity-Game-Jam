@@ -1,13 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ui/Screen.gd" type="Script" id=1]
 [ext_resource path="res://ui/popups/Popups.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/Placeholders/Background.jpg" type="Texture" id=3]
 [ext_resource path="res://ui/components/Notification.gd" type="Script" id=4]
-[ext_resource path="res://ui/windows/NotesWindow.tscn" type="PackedScene" id=5]
-[ext_resource path="res://ui/windows/EmailWindow.tscn" type="PackedScene" id=6]
-[ext_resource path="res://ui/windows/InternetWindow.tscn" type="PackedScene" id=7]
-[ext_resource path="res://ui/windows/GameWindow.tscn" type="PackedScene" id=8]
 
 [node name="Screen" type="Control"]
 anchor_right = 1.0
@@ -25,32 +21,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Buttons" type="GridContainer" parent="."]
+[node name="Buttons" type="VBoxContainer" parent="."]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 320.0
-margin_bottom = 495.0
-custom_constants/vseparation = 50
-custom_constants/hseparation = 50
-columns = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Trash" type="Button" parent="Buttons"]
-margin_right = 125.0
-margin_bottom = 125.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Trash"
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Email" type="Button" parent="Buttons"]
-margin_left = 175.0
-margin_right = 300.0
-margin_bottom = 125.0
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "E-Mail"
@@ -75,9 +59,10 @@ align = 1
 valign = 1
 
 [node name="Internet" type="Button" parent="Buttons"]
-margin_top = 175.0
-margin_right = 125.0
-margin_bottom = 300.0
+margin_top = 100.0
+margin_right = 80.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Internet"
@@ -86,10 +71,10 @@ __meta__ = {
 }
 
 [node name="Game" type="Button" parent="Buttons"]
-margin_left = 175.0
-margin_top = 175.0
-margin_right = 300.0
-margin_bottom = 300.0
+margin_top = 200.0
+margin_right = 80.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Game"
@@ -98,9 +83,10 @@ __meta__ = {
 }
 
 [node name="Notes" type="Button" parent="Buttons"]
-margin_top = 350.0
-margin_right = 125.0
-margin_bottom = 475.0
+margin_top = 300.0
+margin_right = 80.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Notes"
@@ -116,18 +102,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EmailWindow" parent="Windows" instance=ExtResource( 6 )]
-visible = false
-
-[node name="GameWindow" parent="Windows" instance=ExtResource( 8 )]
-visible = false
-
-[node name="InternetWindow" parent="Windows" instance=ExtResource( 7 )]
-visible = false
-
-[node name="NotesWindow" parent="Windows" instance=ExtResource( 5 )]
-visible = false
-
 [node name="Popups" parent="." instance=ExtResource( 2 )]
 
 [node name="Bottom Bar" type="ColorRect" parent="."]
@@ -140,7 +114,3 @@ color = Color( 0.423529, 0.423529, 0.423529, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Buttons/Email" to="." method="_on_Email_pressed"]
-[connection signal="pressed" from="Buttons/Internet" to="." method="_on_Internet_pressed"]
-[connection signal="pressed" from="Buttons/Game" to="." method="_on_Game_pressed"]
-[connection signal="pressed" from="Buttons/Notes" to="." method="_on_Notes_pressed"]
