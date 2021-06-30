@@ -55,7 +55,6 @@ func fill_email_attachments(attachments):
 
 func _process(_delta):
 	$Options/Deny.disabled = selected.size() == 0
-	update_selected_ui()
 
 func _on_gui_input(event, element):
 	if event is InputEventMouseButton:
@@ -68,15 +67,6 @@ func select(element):
 		selected.erase(element)
 	else:
 		selected.append(element)
-
-func update_selected_ui():
-	# from selected
-	from.get_node("Select").visible = "from" in selected
-	
-	# subject selected
-	subject.get_node("Select").visible = "subject" in selected
-	
-	# attachments selected
 
 func _on_Back_pressed():
 	get_parent().show_email_list()

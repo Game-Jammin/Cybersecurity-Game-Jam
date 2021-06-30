@@ -6,7 +6,7 @@
 [node name="BodyLine" type="Control"]
 anchor_right = 1.0
 margin_bottom = 20.0
-rect_min_size = Vector2( 0, 20 )
+rect_min_size = Vector2( 0, 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -29,9 +29,10 @@ __meta__ = {
 }
 
 [node name="Text" type="Label" parent="."]
-anchor_right = 1.0
+anchor_right = 5.0
 anchor_bottom = 1.0
 margin_left = 5.0
+margin_top = 3.0
 margin_right = -5.0
 rect_min_size = Vector2( 0, 20 )
 text = "Attachment Name"
