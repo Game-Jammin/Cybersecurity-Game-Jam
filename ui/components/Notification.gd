@@ -1,4 +1,4 @@
-extends ColorRect
+extends Control
 
 func _process(delta):
 	visible = EmailManager.new_email_num() > 0

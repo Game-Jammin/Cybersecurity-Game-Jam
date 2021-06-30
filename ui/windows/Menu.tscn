@@ -14,10 +14,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -224.5
-margin_top = -223.0
-margin_right = 224.5
-margin_bottom = 223.0
+margin_left = -150.0
+margin_top = -150.0
+margin_right = 150.0
+margin_bottom = 150.0
 rect_min_size = Vector2( 300, 300 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -63,32 +63,31 @@ __meta__ = {
 }
 
 [node name="Start" type="Button" parent="Body/VBoxContainer"]
-margin_top = 73.0
-margin_right = 429.0
-margin_bottom = 143.0
+margin_right = 280.0
+margin_bottom = 70.0
 rect_min_size = Vector2( 0, 70 )
 theme = ExtResource( 6 )
 custom_fonts/font = ExtResource( 5 )
 text = "Start"
 
 [node name="Credits" type="Button" parent="Body/VBoxContainer"]
-margin_top = 163.0
-margin_right = 429.0
-margin_bottom = 233.0
+margin_top = 90.0
+margin_right = 280.0
+margin_bottom = 160.0
 rect_min_size = Vector2( 0, 70 )
 theme = ExtResource( 6 )
 custom_fonts/font = ExtResource( 5 )
 text = "Credits"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Body/VBoxContainer"]
-margin_top = 253.0
-margin_right = 429.0
-margin_bottom = 323.0
+margin_top = 180.0
+margin_right = 280.0
+margin_bottom = 250.0
 size_flags_horizontal = 3
 custom_constants/separation = 30
 
 [node name="Button3" type="Button" parent="Body/VBoxContainer/HBoxContainer"]
-margin_right = 199.0
+margin_right = 125.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 0, 70 )
 size_flags_horizontal = 3
@@ -97,14 +96,15 @@ theme = ExtResource( 6 )
 text = "Mute Music"
 
 [node name="Button4" type="Button" parent="Body/VBoxContainer/HBoxContainer"]
-margin_left = 229.0
-margin_right = 429.0
+margin_left = 155.0
+margin_right = 280.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 0, 70 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 6 )
-text = "Music Sounds"
+text = "Mute Sounds"
 
 [node name="ResizeControls" parent="." instance=ExtResource( 2 )]
 [connection signal="pressed" from="Body/VBoxContainer/Start" to="Body" method="_on_Start_pressed"]
+[connection signal="pressed" from="Body/VBoxContainer/Credits" to="Body" method="_on_Credits_pressed"]

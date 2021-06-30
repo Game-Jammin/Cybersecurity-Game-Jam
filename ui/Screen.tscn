@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ui/Screen.gd" type="Script" id=1]
 [ext_resource path="res://ui/popups/Popups.tscn" type="PackedScene" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://ui/components/Notification.gd" type="Script" id=4]
 [ext_resource path="res://ui/windows/Menu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://new_theme.tres" type="Theme" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://fonts/outlined_font.tres" type="DynamicFont" id=8]
+[ext_resource path="res://art/Placeholders/Notification.png" type="Texture" id=9]
+[ext_resource path="res://ui/components/Taskbar.tscn" type="PackedScene" id=10]
 
 [node name="Screen" type="Control"]
 anchor_right = 1.0
@@ -29,7 +33,7 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = 100.0
 margin_bottom = 400.0
-custom_constants/separation = 20
+custom_constants/separation = 32
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -40,33 +44,81 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "E-Mail"
+icon = ExtResource( 7 )
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Notification" type="ColorRect" parent="Buttons/Email"]
-margin_left = 64.0
-margin_top = -14.0
-margin_right = 94.0
-margin_bottom = 16.0
-color = Color( 1, 0, 0, 1 )
+[node name="Label" type="Label" parent="Buttons/Email"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -6.0
+margin_right = 20.0
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 8 )
+text = "email"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Notification" type="TextureRect" parent="Buttons/Email"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -24.0
+margin_top = -6.0
+margin_right = 4.0
+margin_bottom = 22.0
+texture = ExtResource( 9 )
+expand = true
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Buttons/Email/Notification"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -11.0
+margin_top = -15.0
+margin_right = 13.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 8 )
 text = "1"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Internet" type="Button" parent="Buttons"]
-margin_top = 100.0
+margin_top = 112.0
 margin_right = 80.0
-margin_bottom = 180.0
+margin_bottom = 192.0
 rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+icon = ExtResource( 7 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/Internet"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -32.5
+margin_top = -6.0
+margin_right = 32.5
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 8 )
 text = "Internet"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -85,25 +137,63 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="Buttons/Game"]
+margin_top = 74.0
+margin_right = 40.0
+margin_bottom = 91.0
+custom_fonts/font = ExtResource( 8 )
+
 [node name="Notes" type="Button" parent="Buttons"]
-margin_top = 200.0
+margin_top = 224.0
 margin_right = 80.0
-margin_bottom = 280.0
+margin_bottom = 304.0
 rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+icon = ExtResource( 7 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/Notes"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -22.0
+margin_top = -6.0
+margin_right = 22.0
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 8 )
 text = "Notes"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Menu" type="Button" parent="Buttons"]
-margin_top = 300.0
+margin_top = 336.0
 margin_right = 80.0
-margin_bottom = 380.0
+margin_bottom = 416.0
 rect_min_size = Vector2( 80, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+icon = ExtResource( 7 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/Menu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -6.0
+margin_right = 20.0
+margin_bottom = 11.0
+custom_fonts/font = ExtResource( 8 )
 text = "Menu"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -118,21 +208,12 @@ __meta__ = {
 }
 
 [node name="MenuWindow" parent="Windows" instance=ExtResource( 5 )]
+margin_left = -150.0
+margin_top = -150.0
+margin_right = 150.0
+margin_bottom = 150.0
 
 [node name="Popups" parent="." instance=ExtResource( 2 )]
+visible = false
 
-[node name="Bottom Bar" type="ColorRect" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -49.9999
-margin_bottom = 6.10352e-05
-color = Color( 0.423529, 0.423529, 0.423529, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Bottom Bar"]
-margin_top = 4.0
-margin_right = 597.0
-margin_bottom = 44.0
+[node name="Taskbar" parent="." instance=ExtResource( 10 )]
