@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://ui/email/EmailLine.gd" type="Script" id=1]
-
-[sub_resource type="ImageTexture" id=1]
 
 [node name="EmailLine" type="Button"]
 margin_right = 391.0
@@ -11,14 +9,6 @@ rect_min_size = Vector2( 0, 30 )
 size_flags_horizontal = 3
 flat = true
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -35,24 +25,32 @@ __meta__ = {
 }
 
 [node name="New" type="Label" parent="HBox"]
-margin_top = 8.0
-margin_right = 32.0
-margin_bottom = 22.0
-text = "New!"
+margin_top = 6.0
+margin_right = 25.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 25, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "*"
+align = 1
 
 [node name="From" type="Label" parent="HBox"]
-margin_left = 42.0
-margin_top = 8.0
-margin_right = 133.0
-margin_bottom = 22.0
+margin_left = 35.0
+margin_top = 6.0
+margin_right = 185.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 150, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Email Address"
+clip_text = true
 
 [node name="Subject" type="Label" parent="HBox"]
-margin_left = 143.0
-margin_top = 8.0
-margin_right = 381.0
-margin_bottom = 22.0
+margin_left = 195.0
+margin_top = 6.0
+margin_right = 495.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 300, 0 )
 size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "How does it handle a really long subject string?"
 clip_text = true
 

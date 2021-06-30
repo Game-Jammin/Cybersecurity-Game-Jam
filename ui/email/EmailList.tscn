@@ -1,17 +1,92 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ui/email/EmailList.gd" type="Script" id=1]
+[ext_resource path="res://art/EmailBodyBackground.png" type="Texture" id=2]
 
-[node name="EmailList" type="ScrollContainer"]
+[node name="EmailList" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 1
-scroll_horizontal_enabled = false
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 1280.0
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 50.0
+margin_right = 5.0
+margin_bottom = 5.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 50.0
+margin_right = 40.0
+margin_bottom = 67.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 13.0
+margin_top = 32.0
+margin_right = -2.0
+margin_bottom = -666.0
 size_flags_horizontal = 3
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="New" type="Label" parent="Header"]
+margin_top = 2.0
+margin_right = 25.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 25, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+
+[node name="From" type="Label" parent="Header"]
+margin_left = 35.0
+margin_top = 2.0
+margin_right = 185.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 150, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "From"
+clip_text = true
+
+[node name="Subject" type="Label" parent="Header"]
+margin_left = 195.0
+margin_top = 2.0
+margin_right = 1265.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Subject"
+clip_text = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 57.0
+mouse_filter = 1
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 1272.0
+margin_bottom = 663.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

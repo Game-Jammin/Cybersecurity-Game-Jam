@@ -1,7 +1,7 @@
-extends ScrollContainer
+extends Control
 
 onready var email_line = "res://ui/email/EmailLine.tscn"
-onready var email_list = get_node("VBoxContainer")
+onready var email_list = get_node("ScrollContainer/VBoxContainer")
 
 func _ready():
 	for email in EmailManager.emails:

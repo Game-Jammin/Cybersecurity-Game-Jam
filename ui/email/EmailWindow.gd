@@ -1,7 +1,7 @@
 extends Control
 
 onready var email_line = "res://ui/email/EmailLine.tscn"
-onready var email_lines = get_node("EmailList/VBoxContainer")
+onready var email_lines = get_node("EmailList/ScrollBox/VBoxContainer")
 
 var current_email
 

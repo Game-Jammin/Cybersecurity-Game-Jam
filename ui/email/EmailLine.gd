@@ -4,7 +4,10 @@ var email
 
 func update_line():
 	visible = (email.received and !email.removed)
-	$HBox/New.visible = email.new
+	if email.new:
+		$HBox/New.text = '*'
+	else:
+		$HBox/New.text = ''
 	$HBox/From.text = email.from
 	$HBox/Subject.text = email.subject
 
