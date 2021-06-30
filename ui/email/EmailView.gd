@@ -54,7 +54,7 @@ func fill_email_attachments(attachments):
 		attachment_number = attachment_number + 1
 
 func _process(_delta):
-	$Options/Delete.disabled = selected.size() == 0
+	$Options/Deny.disabled = selected.size() == 0
 	update_selected_ui()
 
 func _on_gui_input(event, element):
@@ -81,5 +81,5 @@ func update_selected_ui():
 func _on_Back_pressed():
 	get_parent().show_email_list()
 
-func _on_Delete_pressed():
+func _on_Deny_pressed():
 	get_parent().show_email_list()

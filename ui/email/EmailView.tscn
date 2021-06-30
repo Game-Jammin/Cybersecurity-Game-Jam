@@ -1,8 +1,47 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://art/Placeholders/Select.png" type="Texture" id=1]
 [ext_resource path="res://ui/email/EmailView.gd" type="Script" id=2]
 [ext_resource path="res://new_theme.tres" type="Theme" id=3]
+[ext_resource path="res://art/EmailButtons.png" type="Texture" id=4]
+[ext_resource path="res://art/EmailButtonsHover.png" type="Texture" id=5]
+[ext_resource path="res://art/EmailButtonsPressed.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 5 )
+region_rect = Rect2( 56, 160, 358, 142 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 5 )
+region_rect = Rect2( 56, 160, 358, 142 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 4 )
+region_rect = Rect2( 56, 160, 358, 142 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 60, 20, 334, 138 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 6 )
+region_rect = Rect2( 60, 20, 334, 138 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( 60, 20, 334, 138 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 5 )
+region_rect = Rect2( 64, 304, 334, 150 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 6 )
+region_rect = Rect2( 64, 304, 334, 150 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 4 )
+region_rect = Rect2( 64, 304, 334, 150 )
 
 [node name="EmailView" type="Control"]
 anchor_right = 1.0
@@ -27,33 +66,41 @@ __meta__ = {
 }
 
 [node name="Back" type="Button" parent="Options"]
-margin_left = 577.0
-margin_right = 624.0
+margin_left = 470.0
+margin_right = 570.0
 margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
 mouse_filter = 1
 theme = ExtResource( 3 )
-text = "Back"
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 
-[node name="Spam" type="Button" parent="Options"]
-visible = false
-margin_left = 610.0
-margin_right = 657.0
-margin_bottom = 20.0
+[node name="Accept" type="Button" parent="Options"]
+margin_left = 590.0
+margin_right = 690.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
 mouse_filter = 1
 theme = ExtResource( 3 )
-text = "Spam"
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Delete" type="Button" parent="Options"]
-margin_left = 644.0
-margin_right = 702.0
+[node name="Deny" type="Button" parent="Options"]
+margin_left = 710.0
+margin_right = 810.0
 margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
 mouse_filter = 1
 theme = ExtResource( 3 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 disabled = true
-text = "Delete"
 
 [node name="HeaderTitles" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -189,9 +236,9 @@ margin_right = 1280.0
 custom_constants/separation = 0
 
 [node name="AttachmentLabel" type="Label" parent="EmailBody/Container"]
-margin_top = 3.0
+margin_top = 4.0
 margin_right = 1280.0
-margin_bottom = 28.0
+margin_bottom = 29.0
 rect_min_size = Vector2( 0, 25 )
 theme = ExtResource( 3 )
 text = "Attachments:"
@@ -210,4 +257,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Options/Back" to="." method="_on_Back_pressed"]
-[connection signal="pressed" from="Options/Delete" to="." method="_on_Delete_pressed"]
+[connection signal="pressed" from="Options/Deny" to="." method="_on_Deny_pressed"]

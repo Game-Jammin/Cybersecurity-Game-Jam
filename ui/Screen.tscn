@@ -208,10 +208,6 @@ __meta__ = {
 }
 
 [node name="MenuWindow" parent="Windows" instance=ExtResource( 5 )]
-margin_left = -150.0
-margin_top = -150.0
-margin_right = 150.0
-margin_bottom = 150.0
 
 [node name="Popups" parent="." instance=ExtResource( 2 )]
 visible = false
