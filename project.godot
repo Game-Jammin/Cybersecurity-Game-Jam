@@ -83,6 +83,11 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray( "dialogic" )
 
+[gui]
+
+theme/custom="res://new_theme.tres"
+theme/custom_font="res://fonts/font.tres"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
