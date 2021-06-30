@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://art/Placeholders/Select.png" type="Texture" id=1]
 [ext_resource path="res://ui/email/EmailView.gd" type="Script" id=2]
@@ -8,28 +8,29 @@
 [ext_resource path="res://art/EmailButtonsPressed.png" type="Texture" id=6]
 [ext_resource path="res://art/EmailButtonsDisabled.png" type="Texture" id=7]
 [ext_resource path="res://ui/email/Select.gd" type="Script" id=8]
-
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 5 )
-region_rect = Rect2( 56, 160, 358, 142 )
-
-[sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 5 )
-region_rect = Rect2( 56, 160, 358, 142 )
-
-[sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 4 )
-region_rect = Rect2( 56, 160, 358, 142 )
+[ext_resource path="res://art/EmailBodyBackground.png" type="Texture" id=9]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 5 )
-region_rect = Rect2( 60, 20, 334, 138 )
+region_rect = Rect2( 56, 160, 358, 142 )
 
 [sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 5 )
+region_rect = Rect2( 56, 160, 358, 142 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( 56, 160, 358, 142 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 5 )
+region_rect = Rect2( 60, 20, 334, 138 )
+
+[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 6 )
 region_rect = Rect2( 60, 20, 334, 138 )
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 4 )
 region_rect = Rect2( 60, 20, 334, 138 )
 
@@ -41,11 +42,11 @@ region_rect = Rect2( 64, 304, 334, 150 )
 texture = ExtResource( 6 )
 region_rect = Rect2( 64, 304, 334, 150 )
 
-[sub_resource type="StyleBoxTexture" id=10]
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 7 )
 region_rect = Rect2( 64, 304, 334, 150 )
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 4 )
 region_rect = Rect2( 64, 304, 334, 150 )
 
@@ -78,9 +79,9 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 mouse_filter = 1
 theme = ExtResource( 3 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 
 [node name="Accept" type="Button" parent="Options"]
 margin_left = 590.0
@@ -89,9 +90,9 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 mouse_filter = 1
 theme = ExtResource( 3 )
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -105,8 +106,8 @@ mouse_filter = 1
 theme = ExtResource( 3 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
-custom_styles/disabled = SubResource( 10 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 disabled = true
 
 [node name="HeaderTitles" type="VBoxContainer" parent="."]
@@ -124,6 +125,7 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 20 )
 mouse_filter = 1
 theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "From:"
 align = 2
 valign = 1
@@ -138,6 +140,7 @@ margin_bottom = 44.0
 rect_min_size = Vector2( 0, 20 )
 mouse_filter = 1
 theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Subject:"
 align = 2
 valign = 1
@@ -162,6 +165,7 @@ anchor_bottom = 1.0
 margin_left = 5.0
 mouse_filter = 1
 theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "From"
 valign = 1
 clip_text = true
@@ -200,6 +204,7 @@ anchor_bottom = 1.0
 margin_left = 5.0
 mouse_filter = 1
 theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Subject"
 valign = 1
 clip_text = true
@@ -229,40 +234,58 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EmailBody" type="ScrollContainer" parent="."]
+[node name="EmailBodyBackground" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 5.0
 margin_top = 100.0
+margin_right = 5.0
+margin_bottom = 5.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmailBody" type="ScrollContainer" parent="EmailBodyBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 10.0
+margin_right = -5.0
 mouse_filter = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Container" type="VBoxContainer" parent="EmailBody"]
-margin_right = 1280.0
-margin_bottom = 620.0
+[node name="Container" type="VBoxContainer" parent="EmailBodyBackground/EmailBody"]
+margin_right = 1260.0
+margin_bottom = 615.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextLines" type="VBoxContainer" parent="EmailBody/Container"]
-margin_right = 1280.0
+[node name="TextLines" type="VBoxContainer" parent="EmailBodyBackground/EmailBody/Container"]
+margin_right = 1260.0
+size_flags_vertical = 5
 custom_constants/separation = 0
 
-[node name="AttachmentLabel" type="Label" parent="EmailBody/Container"]
+[node name="AttachmentLabel" type="Label" parent="EmailBodyBackground/EmailBody/Container"]
 margin_top = 4.0
-margin_right = 1280.0
+margin_right = 1260.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 25 )
 theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Attachments:"
 valign = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Attachments" type="HBoxContainer" parent="EmailBody/Container"]
+[node name="Attachments" type="HBoxContainer" parent="EmailBodyBackground/EmailBody/Container"]
 margin_top = 33.0
-margin_right = 1280.0
+margin_right = 1260.0
 margin_bottom = 33.0
 custom_constants/separation = 25
 alignment = 1

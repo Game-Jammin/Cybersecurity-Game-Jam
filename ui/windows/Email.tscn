@@ -4,8 +4,7 @@
 [ext_resource path="res://ui/components/ResizeControls.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/email/EmailContent.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ui/Window.gd" type="Script" id=4]
-
-[sub_resource type="GradientTexture" id=1]
+[ext_resource path="res://art/WindowBackground.png" type="Texture" id=5]
 
 [node name="EmailWindow" type="Control"]
 anchor_left = 0.5
@@ -22,10 +21,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="NinePatchRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 1 )
+texture = ExtResource( 5 )
+stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -40,4 +40,6 @@ margin_right = -5.0
 margin_bottom = -5.0
 
 [node name="ResizeControls" parent="." instance=ExtResource( 2 )]
+margin_top = -1.29236
+margin_bottom = -1.29236
 [connection signal="gui_input" from="." to="." method="_on_Window_gui_input"]

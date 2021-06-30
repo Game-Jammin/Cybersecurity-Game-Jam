@@ -5,8 +5,8 @@ onready var body_line_prefab = "res://ui/email/BodyLine.tscn"
 
 onready var from = get_node("HeaderInfo/From")
 onready var subject = get_node("HeaderInfo/Subject")
-onready var body_text_container = get_node("EmailBody/Container/TextLines")
-onready var attachments_container = get_node("EmailBody/Container/Attachments")
+onready var body_text_container = get_node("EmailBodyBackground/EmailBody/Container/TextLines")
+onready var attachments_container = get_node("EmailBodyBackground/EmailBody/Container/Attachments")
 
 var selected = []
 

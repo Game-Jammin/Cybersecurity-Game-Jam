@@ -7,6 +7,7 @@
 anchor_right = 1.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 0, 22 )
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -16,6 +17,7 @@ self_modulate = Color( 1, 0, 0, 1 )
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_vertical = 3
 texture = ExtResource( 1 )
 patch_margin_left = 10
 patch_margin_top = 10
@@ -35,9 +37,9 @@ margin_left = 5.0
 margin_top = 3.0
 margin_right = -5.0
 rect_min_size = Vector2( 0, 20 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Attachment Name"
-valign = 1
-clip_text = true
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
