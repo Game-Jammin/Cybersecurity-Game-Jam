@@ -1,4 +1,4 @@
-extends Panel
+extends Control
 
 var dragging = false
 var draggaing_start_position = null

@@ -3,6 +3,9 @@ extends Node
 var started
 var dialogic
 
+func _ready():
+	randomize()
+
 func _on_dialog_end(timeline_name):
 	pass
 	

@@ -1,17 +1,26 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ui/popups/Popup.gd" type="Script" id=1]
-[ext_resource path="res://art/Popups/Pop Up 1.png" type="Texture" id=3]
+[ext_resource path="res://art/Popups/Pop Up 3 Frame 2.png" type="Texture" id=2]
+[ext_resource path="res://art/Popups/Pop Up 3 Frame 1.png" type="Texture" id=3]
 [ext_resource path="res://art/Buttons/ExitButtonPressed.png" type="Texture" id=4]
 [ext_resource path="res://art/Buttons/ExitButtonNormal.png" type="Texture" id=5]
 [ext_resource path="res://art/Buttons/ExitButtonHover.png" type="Texture" id=6]
 
+[sub_resource type="AnimatedTexture" id=1]
+flags = 4
+frames = 2
+fps = 2.0
+frame_0/texture = ExtResource( 3 )
+frame_1/texture = ExtResource( 2 )
+frame_1/delay_sec = 0.0
+
 [node name="Popup" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -953.0
-margin_bottom = -441.0
-texture = ExtResource( 3 )
+margin_right = -1022.0
+margin_bottom = -566.0
+texture = SubResource( 1 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 1 )
