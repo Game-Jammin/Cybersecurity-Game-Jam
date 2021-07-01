@@ -1,5 +1,6 @@
 extends Node
 
+var started
 var dialogic
 
 func _on_dialog_end(timeline_name):
@@ -10,6 +11,7 @@ func _on_dialogic_signal(signal_name):
 		EmailManager.receive_email()
 
 func start_game():
+	EmailManager.load_emails()
 	run_dialog("Start")
 
 func run_dialog(name):

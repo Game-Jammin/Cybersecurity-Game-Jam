@@ -1,10 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ui/components/TitleBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui/components/ResizeControls.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/Window.gd" type="Script" id=3]
-
-[sub_resource type="GradientTexture" id=1]
+[ext_resource path="res://art/Windows/WindowBorder.png" type="Texture" id=4]
+[ext_resource path="res://art/Windows/WindowBackground.png" type="Texture" id=5]
 
 [node name="GameWindow" type="Control"]
 anchor_left = 0.5
@@ -21,30 +21,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="NinePatchRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture = ExtResource( 5 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 40.0
+margin_right = -20.0
+margin_bottom = -20.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border" type="NinePatchRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
-texture = SubResource( 1 )
+texture = ExtResource( 4 )
+patch_margin_left = 60
+patch_margin_right = 60
+patch_margin_bottom = 60
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TitleBar" parent="." instance=ExtResource( 1 )]
+margin_left = -10.0
+margin_right = 10.0
+margin_bottom = -548.0
 mouse_filter = 1
 window_name = "Game"
-
-[node name="Content" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 35.0
-margin_right = -5.0
-margin_bottom = -5.0
-mouse_filter = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ResizeControls" parent="." instance=ExtResource( 2 )]
 [connection signal="gui_input" from="." to="." method="_on_Window_gui_input"]

@@ -1,4 +1,4 @@
-extends ColorRect
+extends Control
 class_name TitleBar
 
 export (String) var window_name

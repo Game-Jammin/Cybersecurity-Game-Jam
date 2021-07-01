@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DialogBox.png-e6fdcc53ccceb2fa35a0f87b572b17e7.stex"
+path="res://.import/EmailButtonsPressed.png-0cacc68f06383dc38381f1b52da0bdf0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/DialogBox.png"
-dest_files=[ "res://.import/DialogBox.png-e6fdcc53ccceb2fa35a0f87b572b17e7.stex" ]
+source_file="res://art/Windows/Email/EmailButtonsPressed.png"
+dest_files=[ "res://.import/EmailButtonsPressed.png-0cacc68f06383dc38381f1b52da0bdf0.stex" ]
 
 [params]
 

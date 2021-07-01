@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/email single UI.png-aa7bf6db59f30964310f2bccbc16b8aa.stex"
+path="res://.import/email single UI.png-d929ece4862ab8acc1c10f2dddfdee67.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/email single UI.png"
-dest_files=[ "res://.import/email single UI.png-aa7bf6db59f30964310f2bccbc16b8aa.stex" ]
+source_file="res://art/Designs/email single UI.png"
+dest_files=[ "res://.import/email single UI.png-d929ece4862ab8acc1c10f2dddfdee67.stex" ]
 
 [params]
 

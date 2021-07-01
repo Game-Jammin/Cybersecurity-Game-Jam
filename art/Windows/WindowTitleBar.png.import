@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DialogBox3.png-b8b72f2df2f904b1b3e83937b93ea3db.stex"
+path="res://.import/WindowTitleBar.png-5123c916d24c5677d94795f8fa16763f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/DialogBox3.png"
-dest_files=[ "res://.import/DialogBox3.png-b8b72f2df2f904b1b3e83937b93ea3db.stex" ]
+source_file="res://art/Windows/WindowTitleBar.png"
+dest_files=[ "res://.import/WindowTitleBar.png-5123c916d24c5677d94795f8fa16763f.stex" ]
 
 [params]
 

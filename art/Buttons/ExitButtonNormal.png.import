@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/DialogBox2.png-b007c3528bf078a7e4fcbb3bfc893c3d.stex"
+path="res://.import/ExitButtonNormal.png-d92a6225d4685495b0c29438f5082a9f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/DialogBox2.png"
-dest_files=[ "res://.import/DialogBox2.png-b007c3528bf078a7e4fcbb3bfc893c3d.stex" ]
+source_file="res://art/Buttons/ExitButtonNormal.png"
+dest_files=[ "res://.import/ExitButtonNormal.png-d92a6225d4685495b0c29438f5082a9f.stex" ]
 
 [params]
 

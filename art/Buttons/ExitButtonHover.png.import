@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/email UI.png-9ee800d769c042c1dff050b74f4d2164.stex"
+path="res://.import/ExitButtonHover.png-21800e19573605997a6c8fa74ae93e1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/email UI.png"
-dest_files=[ "res://.import/email UI.png-9ee800d769c042c1dff050b74f4d2164.stex" ]
+source_file="res://art/Buttons/ExitButtonHover.png"
+dest_files=[ "res://.import/ExitButtonHover.png-21800e19573605997a6c8fa74ae93e1c.stex" ]
 
 [params]
 

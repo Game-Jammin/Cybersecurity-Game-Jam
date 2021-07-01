@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/EmailButtonsPressed.png-b4bc8b732ea74ef73bf31822fe75b0df.stex"
+path="res://.import/ExitButtonPressed.png-d683e421bcec38af3983d8634a29ef19.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/EmailButtonsPressed.png"
-dest_files=[ "res://.import/EmailButtonsPressed.png-b4bc8b732ea74ef73bf31822fe75b0df.stex" ]
+source_file="res://art/Buttons/ExitButtonPressed.png"
+dest_files=[ "res://.import/ExitButtonPressed.png-d683e421bcec38af3983d8634a29ef19.stex" ]
 
 [params]
 

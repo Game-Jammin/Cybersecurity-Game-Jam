@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ui/components/TitleBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ui/components/ResizeControls.tscn" type="PackedScene" id=2]
@@ -6,8 +6,8 @@
 [ext_resource path="res://ui/Menu.gd" type="Script" id=4]
 [ext_resource path="res://fonts/font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://new_theme.tres" type="Theme" id=6]
-
-[sub_resource type="GradientTexture" id=1]
+[ext_resource path="res://art/Windows/WindowBorder.png" type="Texture" id=7]
+[ext_resource path="res://art/Windows/WindowBackground.png" type="Texture" id=8]
 
 [node name="MenuWindow" type="Control"]
 anchor_left = 0.5
@@ -24,23 +24,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="NinePatchRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 1 )
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture = ExtResource( 8 )
+stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TitleBar" parent="." instance=ExtResource( 1 )]
-window_name = "Menu"
-
 [node name="Body" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 30.0
-margin_right = -5.0
-margin_bottom = -5.0
+margin_left = 20.0
+margin_top = 40.0
+margin_right = -20.0
+margin_bottom = -20.0
 mouse_filter = 1
 script = ExtResource( 4 )
 __meta__ = {
@@ -50,10 +53,6 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="Body"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -5.0
-margin_bottom = -5.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -63,48 +62,69 @@ __meta__ = {
 }
 
 [node name="Start" type="Button" parent="Body/VBoxContainer"]
-margin_right = 280.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 0, 70 )
+margin_top = 25.0
+margin_right = 260.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 0, 50 )
 theme = ExtResource( 6 )
 custom_fonts/font = ExtResource( 5 )
 text = "Start"
 
 [node name="Credits" type="Button" parent="Body/VBoxContainer"]
-margin_top = 90.0
-margin_right = 280.0
-margin_bottom = 160.0
-rect_min_size = Vector2( 0, 70 )
+margin_top = 95.0
+margin_right = 260.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 50 )
 theme = ExtResource( 6 )
 custom_fonts/font = ExtResource( 5 )
 text = "Credits"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Body/VBoxContainer"]
-margin_top = 180.0
-margin_right = 280.0
-margin_bottom = 250.0
+margin_top = 165.0
+margin_right = 260.0
+margin_bottom = 215.0
 size_flags_horizontal = 3
 custom_constants/separation = 30
 
-[node name="Button3" type="Button" parent="Body/VBoxContainer/HBoxContainer"]
-margin_right = 125.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 0, 70 )
+[node name="Music" type="Button" parent="Body/VBoxContainer/HBoxContainer"]
+margin_right = 115.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 6 )
 text = "Mute Music"
 
-[node name="Button4" type="Button" parent="Body/VBoxContainer/HBoxContainer"]
-margin_left = 155.0
-margin_right = 280.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 0, 70 )
+[node name="Sound" type="Button" parent="Body/VBoxContainer/HBoxContainer"]
+margin_left = 145.0
+margin_right = 260.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 6 )
 text = "Mute Sounds"
 
+[node name="Border" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+draw_center = false
+patch_margin_left = 60
+patch_margin_right = 60
+patch_margin_bottom = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleBar" parent="." instance=ExtResource( 1 )]
+margin_left = -10.0
+margin_right = 10.0
+margin_bottom = -260.0
+window_name = "Menu"
+
 [node name="ResizeControls" parent="." instance=ExtResource( 2 )]
 [connection signal="pressed" from="Body/VBoxContainer/Start" to="Body" method="_on_Start_pressed"]
 [connection signal="pressed" from="Body/VBoxContainer/Credits" to="Body" method="_on_Credits_pressed"]
+[connection signal="pressed" from="Body/VBoxContainer/HBoxContainer/Music" to="Body" method="_on_Music_pressed"]
+[connection signal="pressed" from="Body/VBoxContainer/HBoxContainer/Sound" to="Body" method="_on_Sound_pressed"]

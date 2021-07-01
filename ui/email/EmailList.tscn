@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ui/email/EmailList.gd" type="Script" id=1]
-[ext_resource path="res://art/EmailBodyBackground.png" type="Texture" id=2]
+[ext_resource path="res://art/Windows/Email/EmailBodyBackground.png" type="Texture" id=2]
+
+
 
 [node name="EmailList" type="Control"]
 anchor_right = 1.0

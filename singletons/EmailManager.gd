@@ -1,20 +1,23 @@
 extends Node
 
+signal email_flagged
 onready var email_folder = "res://emails"
 
 var issue_flag = "<flag>"
 
-var emails = []
-var email = {'received': false, 'new': true, 'spam': false, 'removed': false,
+var emails
+var email = {'received': false, 'new': true, 'flagged': false,
  'from': '', 'subject': '', 'body_lines': [], 'attachments': [], 'issues': []}
 
-var current_email = 0
+var current_email
 
 func _ready():
-	get_all_email_files()
+	load_emails()
 
 # Get a list of all email files in the 
-func get_all_email_files():
+func load_emails():
+	emails = []
+	current_email = 0
 	var dir = Directory.new()
 	dir.open(email_folder)
 	dir.list_dir_begin()
@@ -79,6 +82,12 @@ func new_email_num():
 		if email.new and email.received:
 			num = num + 1
 	return num 
+
+func deny_email():
+	pass
+
+func accept_email():
+	pass
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
