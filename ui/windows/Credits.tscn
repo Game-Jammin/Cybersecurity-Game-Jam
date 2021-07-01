@@ -53,6 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
 margin_top = 5.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "This game was made for the Cybersecurity Game Jam by:
 
 Adam Fowler : Code / Design"

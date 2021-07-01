@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://ui/Screen.gd" type="Script" id=1]
 [ext_resource path="res://ui/popups/Popups.tscn" type="PackedScene" id=2]
@@ -14,6 +14,12 @@
 [ext_resource path="res://art/Buttons/Internet Icon.png" type="Texture" id=12]
 [ext_resource path="res://art/Buttons/Internet Icon Hover.png" type="Texture" id=13]
 [ext_resource path="res://art/Buttons/Email Icon.png" type="Texture" id=14]
+[ext_resource path="res://art/Buttons/Notes Icon Hover.png" type="Texture" id=15]
+[ext_resource path="res://art/Buttons/Notes Icon.png" type="Texture" id=16]
+[ext_resource path="res://art/Buttons/Notes Icon Click.png" type="Texture" id=17]
+[ext_resource path="res://art/Buttons/Menu Icon Hover.png" type="Texture" id=18]
+[ext_resource path="res://art/Buttons/Menu Icon.png" type="Texture" id=19]
+[ext_resource path="res://art/Buttons/Menu Icon Click.png" type="Texture" id=20]
 
 [node name="Screen" type="Control"]
 anchor_right = 1.0
@@ -43,20 +49,20 @@ __meta__ = {
 }
 
 [node name="Email" type="TextureButton" parent="Buttons"]
-margin_right = 146.0
-margin_bottom = 146.0
-rect_min_size = Vector2( 80, 80 )
+margin_right = 120.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 14 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 5 )
+expand = true
 
 [node name="Notification" type="TextureRect" parent="Buttons/Email"]
-anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -24.0
-margin_top = -454.0
-margin_right = 4.0
-margin_bottom = -426.0
+anchor_bottom = 1.0
+margin_left = 75.0
+margin_right = -7.62939e-06
+margin_bottom = -75.0
 texture = ExtResource( 9 )
 expand = true
 script = ExtResource( 4 )
@@ -82,51 +88,34 @@ __meta__ = {
 }
 
 [node name="Internet" type="TextureButton" parent="Buttons"]
-margin_top = 178.0
-margin_right = 146.0
-margin_bottom = 324.0
-rect_min_size = Vector2( 80, 80 )
+margin_top = 152.0
+margin_right = 120.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 11 )
 texture_hover = ExtResource( 13 )
+expand = true
 
 [node name="Notes" type="TextureButton" parent="Buttons"]
-margin_top = 356.0
-margin_right = 146.0
-margin_bottom = 436.0
-rect_min_size = Vector2( 80, 80 )
-
-[node name="Label" type="Label" parent="Buttons/Notes"]
-margin_left = 20.0
-margin_top = -6.0
-margin_right = -20.0
-margin_bottom = 11.0
-custom_fonts/font = ExtResource( 8 )
-text = "Notes"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_top = 304.0
+margin_right = 120.0
+margin_bottom = 424.0
+rect_min_size = Vector2( 120, 120 )
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 15 )
+expand = true
 
 [node name="Menu" type="TextureButton" parent="Buttons"]
-margin_top = 468.0
-margin_right = 146.0
-margin_bottom = 548.0
-rect_min_size = Vector2( 80, 80 )
-
-[node name="Label" type="Label" parent="Buttons/Menu"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -20.0
-margin_top = -6.0
-margin_right = 20.0
-margin_bottom = 11.0
-custom_fonts/font = ExtResource( 8 )
-text = "Menu"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_top = 456.0
+margin_right = 120.0
+margin_bottom = 576.0
+rect_min_size = Vector2( 120, 120 )
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 20 )
+texture_hover = ExtResource( 18 )
+expand = true
 
 [node name="Windows" type="Control" parent="."]
 anchor_right = 1.0
