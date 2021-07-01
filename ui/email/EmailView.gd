@@ -73,3 +73,6 @@ func _on_Back_pressed():
 
 func _on_Deny_pressed():
 	get_parent().show_email_list()
+
+func _on_Accept_pressed():
+	pass # Replace with function body.

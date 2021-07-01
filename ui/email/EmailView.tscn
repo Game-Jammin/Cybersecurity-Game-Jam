@@ -1,54 +1,22 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://art/Placeholders/Select.png" type="Texture" id=1]
 [ext_resource path="res://ui/email/EmailView.gd" type="Script" id=2]
 [ext_resource path="res://new_theme.tres" type="Theme" id=3]
-[ext_resource path="res://art/Windows/Email/EmailButtons.png" type="Texture" id=4]
-[ext_resource path="res://art/Windows/Email/EmailButtonsHover.png" type="Texture" id=5]
-[ext_resource path="res://art/Windows/Email/EmailButtonsPressed.png" type="Texture" id=6]
-[ext_resource path="res://art/Windows/Email/EmailButtonsDisabled.png" type="Texture" id=7]
 [ext_resource path="res://ui/email/Select.gd" type="Script" id=8]
 [ext_resource path="res://art/Windows/Email/EmailBodyBackground.png" type="Texture" id=9]
-
-[sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 5 )
-region_rect = Rect2( 56, 160, 358, 142 )
-
-[sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 5 )
-region_rect = Rect2( 56, 160, 358, 142 )
-
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 4 )
-region_rect = Rect2( 56, 160, 358, 142 )
-
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 5 )
-region_rect = Rect2( 60, 20, 334, 138 )
-
-[sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 6 )
-region_rect = Rect2( 60, 20, 334, 138 )
-
-[sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 4 )
-region_rect = Rect2( 60, 20, 334, 138 )
-
-[sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 5 )
-region_rect = Rect2( 64, 304, 334, 150 )
-
-[sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 6 )
-region_rect = Rect2( 64, 304, 334, 150 )
-
-[sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 7 )
-region_rect = Rect2( 64, 304, 334, 150 )
-
-[sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 4 )
-region_rect = Rect2( 64, 304, 334, 150 )
+[ext_resource path="res://art/Buttons/Email/BackNormal.png" type="Texture" id=10]
+[ext_resource path="res://art/Buttons/Email/DenyPressed.png" type="Texture" id=11]
+[ext_resource path="res://art/Buttons/Email/BackDisabled.png" type="Texture" id=12]
+[ext_resource path="res://art/Buttons/Email/BackHover.png" type="Texture" id=13]
+[ext_resource path="res://art/Buttons/Email/DenyDisabled.png" type="Texture" id=14]
+[ext_resource path="res://art/Buttons/Email/BackPressed.png" type="Texture" id=15]
+[ext_resource path="res://art/Buttons/Email/AcceptPressed.png" type="Texture" id=16]
+[ext_resource path="res://art/Buttons/Email/DenyNormal.png" type="Texture" id=17]
+[ext_resource path="res://art/Buttons/Email/AcceptDisabled.png" type="Texture" id=18]
+[ext_resource path="res://art/Buttons/Email/AcceptHover.png" type="Texture" id=19]
+[ext_resource path="res://art/Buttons/Email/DenyHover.png" type="Texture" id=20]
+[ext_resource path="res://art/Buttons/Email/AccecptNormal.png" type="Texture" id=21]
 
 [node name="EmailView" type="Control"]
 anchor_right = 1.0
@@ -63,7 +31,7 @@ __meta__ = {
 [node name="Options" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -690.0
+margin_bottom = -670.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_vertical = 0
 custom_constants/separation = 20
@@ -72,43 +40,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back" type="Button" parent="Options"]
-margin_left = 470.0
-margin_right = 570.0
+[node name="Back" type="TextureButton" parent="Options"]
+margin_left = 395.0
+margin_right = 545.0
 margin_bottom = 50.0
-rect_min_size = Vector2( 100, 50 )
-mouse_filter = 1
-theme = ExtResource( 3 )
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
+rect_min_size = Vector2( 150, 50 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 13 )
+texture_disabled = ExtResource( 12 )
+expand = true
 
-[node name="Accept" type="Button" parent="Options"]
-margin_left = 590.0
-margin_right = 690.0
+[node name="Accept" type="TextureButton" parent="Options"]
+margin_left = 565.0
+margin_right = 715.0
 margin_bottom = 50.0
-rect_min_size = Vector2( 100, 50 )
-mouse_filter = 1
-theme = ExtResource( 3 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+rect_min_size = Vector2( 150, 50 )
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 19 )
+texture_disabled = ExtResource( 18 )
+expand = true
 
-[node name="Deny" type="Button" parent="Options"]
-margin_left = 710.0
-margin_right = 810.0
+[node name="Deny" type="TextureButton" parent="Options"]
+margin_left = 735.0
+margin_right = 885.0
 margin_bottom = 50.0
-rect_min_size = Vector2( 100, 50 )
-mouse_filter = 1
-theme = ExtResource( 3 )
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/disabled = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
-disabled = true
+rect_min_size = Vector2( 150, 50 )
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 20 )
+texture_disabled = ExtResource( 14 )
+expand = true
 
 [node name="HeaderTitles" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -293,4 +256,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Options/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Options/Accept" to="." method="_on_Accept_pressed"]
 [connection signal="pressed" from="Options/Deny" to="." method="_on_Deny_pressed"]

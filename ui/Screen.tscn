@@ -2,24 +2,24 @@
 
 [ext_resource path="res://ui/Screen.gd" type="Script" id=1]
 [ext_resource path="res://ui/popups/Popups.tscn" type="PackedScene" id=2]
-[ext_resource path="res://art/Placeholders/Background.jpg" type="Texture" id=3]
+[ext_resource path="res://art/Designs/Desktop Wallpaper.png" type="Texture" id=3]
 [ext_resource path="res://ui/components/Notification.gd" type="Script" id=4]
-[ext_resource path="res://art/Buttons/Email Icon Hover.png" type="Texture" id=5]
+[ext_resource path="res://art/Buttons/Screen/Email Icon.png" type="Texture" id=5]
 [ext_resource path="res://new_theme.tres" type="Theme" id=6]
-[ext_resource path="res://art/Buttons/Email Icon Click.png" type="Texture" id=7]
+[ext_resource path="res://art/Buttons/Screen/Email Icon Click.png" type="Texture" id=7]
 [ext_resource path="res://fonts/outlined_font.tres" type="DynamicFont" id=8]
 [ext_resource path="res://art/Placeholders/Notification.png" type="Texture" id=9]
 [ext_resource path="res://ui/components/Taskbar.tscn" type="PackedScene" id=10]
-[ext_resource path="res://art/Buttons/Internet Icon Click.png" type="Texture" id=11]
-[ext_resource path="res://art/Buttons/Internet Icon.png" type="Texture" id=12]
-[ext_resource path="res://art/Buttons/Internet Icon Hover.png" type="Texture" id=13]
-[ext_resource path="res://art/Buttons/Email Icon.png" type="Texture" id=14]
-[ext_resource path="res://art/Buttons/Notes Icon Hover.png" type="Texture" id=15]
-[ext_resource path="res://art/Buttons/Notes Icon.png" type="Texture" id=16]
-[ext_resource path="res://art/Buttons/Notes Icon Click.png" type="Texture" id=17]
-[ext_resource path="res://art/Buttons/Menu Icon Hover.png" type="Texture" id=18]
-[ext_resource path="res://art/Buttons/Menu Icon.png" type="Texture" id=19]
-[ext_resource path="res://art/Buttons/Menu Icon Click.png" type="Texture" id=20]
+[ext_resource path="res://art/Buttons/Screen/Menu Icon Hover.png" type="Texture" id=11]
+[ext_resource path="res://art/Buttons/Screen/Menu Icon.png" type="Texture" id=12]
+[ext_resource path="res://art/Buttons/Screen/Notes Icon.png" type="Texture" id=13]
+[ext_resource path="res://art/Buttons/Screen/Email Icon Hover.png" type="Texture" id=14]
+[ext_resource path="res://art/Buttons/Screen/Internet Icon Click.png" type="Texture" id=15]
+[ext_resource path="res://art/Buttons/Screen/Internet Icon Hover.png" type="Texture" id=16]
+[ext_resource path="res://art/Buttons/Screen/Notes Icon Hover.png" type="Texture" id=17]
+[ext_resource path="res://art/Buttons/Screen/Notes Icon Click.png" type="Texture" id=18]
+[ext_resource path="res://art/Buttons/Screen/Internet Icon.png" type="Texture" id=19]
+[ext_resource path="res://art/Buttons/Screen/Menu Icon Click.png" type="Texture" id=20]
 
 [node name="Screen" type="Control"]
 anchor_right = 1.0
@@ -34,6 +34,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 3 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -52,9 +53,9 @@ __meta__ = {
 margin_right = 120.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 120, 120 )
-texture_normal = ExtResource( 14 )
+texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 7 )
-texture_hover = ExtResource( 5 )
+texture_hover = ExtResource( 14 )
 expand = true
 
 [node name="Notification" type="TextureRect" parent="Buttons/Email"]
@@ -92,9 +93,9 @@ margin_top = 152.0
 margin_right = 120.0
 margin_bottom = 272.0
 rect_min_size = Vector2( 120, 120 )
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 13 )
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 16 )
 expand = true
 
 [node name="Notes" type="TextureButton" parent="Buttons"]
@@ -102,9 +103,9 @@ margin_top = 304.0
 margin_right = 120.0
 margin_bottom = 424.0
 rect_min_size = Vector2( 120, 120 )
-texture_normal = ExtResource( 16 )
-texture_pressed = ExtResource( 17 )
-texture_hover = ExtResource( 15 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 17 )
 expand = true
 
 [node name="Menu" type="TextureButton" parent="Buttons"]
@@ -112,9 +113,9 @@ margin_top = 456.0
 margin_right = 120.0
 margin_bottom = 576.0
 rect_min_size = Vector2( 120, 120 )
-texture_normal = ExtResource( 19 )
+texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 20 )
-texture_hover = ExtResource( 18 )
+texture_hover = ExtResource( 11 )
 expand = true
 
 [node name="Windows" type="Control" parent="."]
