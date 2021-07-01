@@ -1,14 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://ui/Screen.gd" type="Script" id=1]
 [ext_resource path="res://ui/popups/Popups.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/Placeholders/Background.jpg" type="Texture" id=3]
 [ext_resource path="res://ui/components/Notification.gd" type="Script" id=4]
+[ext_resource path="res://art/Buttons/Email Icon Hover.png" type="Texture" id=5]
 [ext_resource path="res://new_theme.tres" type="Theme" id=6]
-[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://art/Buttons/Email Icon Click.png" type="Texture" id=7]
 [ext_resource path="res://fonts/outlined_font.tres" type="DynamicFont" id=8]
 [ext_resource path="res://art/Placeholders/Notification.png" type="Texture" id=9]
 [ext_resource path="res://ui/components/Taskbar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://art/Buttons/Internet Icon Click.png" type="Texture" id=11]
+[ext_resource path="res://art/Buttons/Internet Icon.png" type="Texture" id=12]
+[ext_resource path="res://art/Buttons/Internet Icon Hover.png" type="Texture" id=13]
+[ext_resource path="res://art/Buttons/Email Icon.png" type="Texture" id=14]
 
 [node name="Screen" type="Control"]
 anchor_right = 1.0
@@ -37,40 +42,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Email" type="Button" parent="Buttons"]
-margin_right = 80.0
-margin_bottom = 80.0
+[node name="Email" type="TextureButton" parent="Buttons"]
+margin_right = 146.0
+margin_bottom = 146.0
 rect_min_size = Vector2( 80, 80 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-icon = ExtResource( 7 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Buttons/Email"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -20.0
-margin_top = -6.0
-margin_right = 20.0
-margin_bottom = 11.0
-custom_fonts/font = ExtResource( 8 )
-text = "email"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 5 )
 
 [node name="Notification" type="TextureRect" parent="Buttons/Email"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -24.0
-margin_top = -6.0
+margin_top = -454.0
 margin_right = 4.0
-margin_bottom = 22.0
+margin_bottom = -426.0
 texture = ExtResource( 9 )
 expand = true
 script = ExtResource( 4 )
@@ -95,74 +81,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Internet" type="Button" parent="Buttons"]
-margin_top = 112.0
-margin_right = 80.0
-margin_bottom = 192.0
+[node name="Internet" type="TextureButton" parent="Buttons"]
+margin_top = 178.0
+margin_right = 146.0
+margin_bottom = 324.0
 rect_min_size = Vector2( 80, 80 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-icon = ExtResource( 7 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 13 )
 
-[node name="Label" type="Label" parent="Buttons/Internet"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -32.5
-margin_top = -6.0
-margin_right = 32.5
-margin_bottom = 11.0
-custom_fonts/font = ExtResource( 8 )
-text = "Internet"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Game" type="Button" parent="Buttons"]
-visible = false
-margin_top = 200.0
-margin_right = 80.0
-margin_bottom = 280.0
+[node name="Notes" type="TextureButton" parent="Buttons"]
+margin_top = 356.0
+margin_right = 146.0
+margin_bottom = 436.0
 rect_min_size = Vector2( 80, 80 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Game"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Buttons/Game"]
-margin_top = 74.0
-margin_right = 40.0
-margin_bottom = 91.0
-custom_fonts/font = ExtResource( 8 )
-
-[node name="Notes" type="Button" parent="Buttons"]
-margin_top = 224.0
-margin_right = 80.0
-margin_bottom = 304.0
-rect_min_size = Vector2( 80, 80 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-icon = ExtResource( 7 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="Buttons/Notes"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -22.0
+margin_left = 20.0
 margin_top = -6.0
-margin_right = 22.0
+margin_right = -20.0
 margin_bottom = 11.0
 custom_fonts/font = ExtResource( 8 )
 text = "Notes"
@@ -170,18 +107,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="Button" parent="Buttons"]
-margin_top = 336.0
-margin_right = 80.0
-margin_bottom = 416.0
+[node name="Menu" type="TextureButton" parent="Buttons"]
+margin_top = 468.0
+margin_right = 146.0
+margin_bottom = 548.0
 rect_min_size = Vector2( 80, 80 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-icon = ExtResource( 7 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="Buttons/Menu"]
 anchor_left = 0.5
