@@ -20,7 +20,7 @@ func _ready():
 
 func load_email(email):
 	current_email = email
-	selected = []
+	selected.clear()
 	email.new = false
 	from.get_node("Text").text = email.from
 	subject.get_node("Text").text = email.subject
@@ -30,10 +30,12 @@ func load_email(email):
 	
 	fill_body_lines(email.body_lines)
 	fill_email_attachments(email.attachments)
+	print(selected)
 
 
 func fill_body_lines(body_lines):
 	for line in body_text_container.get_children():
+		body_text_container.remove_child(line)
 		line.queue_free()
 	
 	var line_number = 0
@@ -48,9 +50,10 @@ func fill_body_lines(body_lines):
 		line_number = line_number + 1
 
 func fill_email_attachments(attachments):
-	#$EmailBodyBackground/EmailBody/Container/AttachmentHeader.visible = attachments.size() > 0
+	$EmailBodyBackground/EmailBody/Container/AttachmentHeader.visible = attachments.size() > 0
 	
 	for attachment in attachments_container.get_children():
+		attachments_container.remove_child(attachment)
 		attachment.queue_free()
 	
 	var attachment_number = 0
@@ -77,6 +80,8 @@ func select(element):
 		selected.erase(element)
 	else:
 		selected.append(element)
+		
+	print(selected)
 
 func _on_Back_pressed():
 	get_parent().show_email_list()
