@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://art/Placeholders/Select.png" type="Texture" id=1]
 [ext_resource path="res://ui/email/EmailView.gd" type="Script" id=2]
 [ext_resource path="res://new_theme.tres" type="Theme" id=3]
+[ext_resource path="res://art/Placeholders/BottomLine.png" type="Texture" id=4]
 [ext_resource path="res://ui/email/Select.gd" type="Script" id=8]
 [ext_resource path="res://art/Windows/Email/EmailBodyBackground.png" type="Texture" id=9]
 [ext_resource path="res://art/Buttons/Email/BackNormal.png" type="Texture" id=10]
@@ -214,29 +215,49 @@ __meta__ = {
 [node name="EmailBody" type="ScrollContainer" parent="EmailBodyBackground"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
+margin_left = 8.0
 margin_top = 10.0
-margin_right = -5.0
 mouse_filter = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Container" type="VBoxContainer" parent="EmailBodyBackground/EmailBody"]
-margin_right = 1260.0
+margin_right = 1272.0
 margin_bottom = 615.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextLines" type="VBoxContainer" parent="EmailBodyBackground/EmailBody/Container"]
-margin_right = 1260.0
+margin_right = 1272.0
 size_flags_vertical = 5
 custom_constants/separation = 0
 
-[node name="AttachmentLabel" type="Label" parent="EmailBodyBackground/EmailBody/Container"]
+[node name="AttachmentHeader" type="Control" parent="EmailBodyBackground/EmailBody/Container"]
 margin_top = 4.0
+margin_right = 1272.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="Attachment Label" type="TextureRect" parent="EmailBodyBackground/EmailBody/Container/AttachmentHeader"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -16.0
+margin_right = -5.0
+margin_bottom = -26.0
+rect_min_size = Vector2( 0, 20 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttachmentLabel" type="Label" parent="EmailBodyBackground/EmailBody/Container/AttachmentHeader"]
+margin_left = 10.0
+margin_top = 1.0
 margin_right = 1260.0
-margin_bottom = 29.0
+margin_bottom = 26.0
 rect_min_size = Vector2( 0, 25 )
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -246,10 +267,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Attachment Label2" type="TextureRect" parent="EmailBodyBackground/EmailBody/Container/AttachmentHeader"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 8.0
+margin_bottom = -2.0
+rect_min_size = Vector2( 0, 20 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Attachments" type="HBoxContainer" parent="EmailBodyBackground/EmailBody/Container"]
-margin_top = 33.0
-margin_right = 1260.0
-margin_bottom = 33.0
+margin_top = 38.0
+margin_right = 1272.0
+margin_bottom = 38.0
 custom_constants/separation = 25
 alignment = 1
 __meta__ = {

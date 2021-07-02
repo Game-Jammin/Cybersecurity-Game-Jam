@@ -48,6 +48,8 @@ func fill_body_lines(body_lines):
 		line_number = line_number + 1
 
 func fill_email_attachments(attachments):
+	$EmailBodyBackground/EmailBody/Container/AttachmentHeader.visible = attachments.size() > 0
+	
 	for attachment in attachments_container.get_children():
 		attachment.queue_free()
 	
