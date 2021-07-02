@@ -72,6 +72,7 @@ DialogicSingleton="*res://addons/dialogic/Other/DialogicSingleton.gd"
 EmailManager="*res://singletons/EmailManager.gd"
 GameManager="*res://singletons/GameManager.gd"
 WindowManager="*res://singletons/WindowManager.gd"
+SoundManager="*res://singletons/SoundManager.tscn"
 
 [display]
 

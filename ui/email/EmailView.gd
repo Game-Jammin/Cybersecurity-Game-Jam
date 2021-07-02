@@ -8,6 +8,10 @@ onready var subject = get_node("HeaderInfo/Subject")
 onready var body_text_container = get_node("EmailBodyBackground/EmailBody/Container/TextLines")
 onready var attachments_container = get_node("EmailBodyBackground/EmailBody/Container/Attachments")
 
+onready var accept_button = get_node("Options/Accept")
+onready var deny_button = get_node("Options/Deny")
+
+var current_email
 var selected = []
 
 func _ready():
@@ -15,10 +19,14 @@ func _ready():
 	subject.connect("gui_input", self, "_on_gui_input", ['subject'])
 
 func load_email(email):
+	current_email = email
 	selected = []
 	email.new = false
 	from.get_node("Text").text = email.from
 	subject.get_node("Text").text = email.subject
+	
+	deny_button.visible = not email.flagged
+	accept_button.visible = not email.flagged
 	
 	fill_body_lines(email.body_lines)
 	fill_email_attachments(email.attachments)
@@ -54,7 +62,7 @@ func fill_email_attachments(attachments):
 		attachment_number = attachment_number + 1
 
 func _process(_delta):
-	$Options/Deny.disabled = selected.size() == 0
+	deny_button.disabled = selected.size() == 0
 
 func _on_gui_input(event, element):
 	if event is InputEventMouseButton:
@@ -72,7 +80,9 @@ func _on_Back_pressed():
 	get_parent().show_email_list()
 
 func _on_Deny_pressed():
+	EmailManager.flag_email(current_email, selected)
 	get_parent().show_email_list()
 
 func _on_Accept_pressed():
-	pass # Replace with function body.
+	EmailManager.flag_email(current_email, [])
+	get_parent().show_email_list()

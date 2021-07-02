@@ -83,11 +83,19 @@ func new_email_num():
 			num = num + 1
 	return num 
 
-func deny_email():
-	pass
-
-func accept_email():
-	pass
+func flag_email(email, selected):
+	email.flagged = true
+	var correct = true
+	
+	for issue in email.issues:
+		if not issue in selected:
+			correct = false
+	
+	for select in selected:
+		if not select in email.issues:
+			correct = false
+	
+	emit_signal("email_flagged", correct)
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
