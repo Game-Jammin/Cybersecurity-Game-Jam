@@ -30,8 +30,6 @@ func load_email(email):
 	
 	fill_body_lines(email.body_lines)
 	fill_email_attachments(email.attachments)
-	print(selected)
-
 
 func fill_body_lines(body_lines):
 	for line in body_text_container.get_children():
@@ -80,8 +78,6 @@ func select(element):
 		selected.erase(element)
 	else:
 		selected.append(element)
-		
-	print(selected)
 
 func _on_Back_pressed():
 	get_parent().show_email_list()
