@@ -3,7 +3,7 @@ extends Button
 var email
 
 func update_line():
-	#visible = (email.received and !email.flagged)
+	visible = (email.received and !email.flagged)
 	if email.new:
 		$HBox/New.text = '*'
 	else:

@@ -1,5 +1,10 @@
 extends Control
 
-func play_sound(sound_name):
-	$Sound.stream = sound_name
-	$Sound.play(0)
+func click():
+	$Click.play()
+
+func _input(event):
+	if event.is_action_released("mouse_click"):
+		$MouseUp.play()
+	if event.is_action_pressed("mouse_click"):
+		$MouseDown.play()

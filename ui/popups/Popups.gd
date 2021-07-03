@@ -22,6 +22,8 @@ func _ready():
 	dir.list_dir_end()
 
 func _process(_delta):
+	running = GameManager.wrong > 0
+	
 	visible = $Container.get_child_count() > 0
 	
 	if $Container.get_child_count() <= max_popups and $Timer.is_stopped() and running:
