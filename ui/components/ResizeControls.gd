@@ -55,7 +55,7 @@ func _process(delta):
 	if following:
 		get_parent()._on_get_focus()
 		if (scale_y):
-			get_parent().rect_size.y = window_size.y + (get_global_mouse_position().y - mouse_offset.y)
+			get_parent().rect_size.y = min(OS.window_size.y, window_size.y + (get_global_mouse_position().y - mouse_offset.y))
 		
 		if (scale_x):
-			get_parent().rect_size.x = window_size.x + (get_global_mouse_position().x - mouse_offset.x)
+			get_parent().rect_size.x = min(OS.window_size.x, window_size.x + (get_global_mouse_position().x - mouse_offset.x))
