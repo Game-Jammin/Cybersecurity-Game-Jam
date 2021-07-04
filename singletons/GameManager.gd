@@ -20,11 +20,17 @@ func _on_dialogic_signal(signal_name):
 	if signal_name == "new_email":
 		EmailManager.receive_email()
 
-func start_game():
+func reset():
 	time = 0
 	wrong = 0
+
+func start_game():
+	reset()
 	EmailManager.load_emails()
-	run_dialog("Start")
+	run_dialog("Intro")
+
+func end_game():
+	run_dialog("Outro")
 
 func run_dialog(name):
 	var dialogic = Dialogic.start(name, false)
