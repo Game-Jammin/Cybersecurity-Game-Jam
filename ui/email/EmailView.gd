@@ -25,8 +25,8 @@ func load_email(email):
 	from.get_node("Text").text = email.from
 	subject.get_node("Text").text = email.subject
 	
-	deny_button.visible = not email.flagged
-	accept_button.visible = not email.flagged
+	deny_button.visible = email.flagged == "Pending"
+	accept_button.visible = email.flagged == "Pending"
 	
 	fill_body_lines(email.body_lines)
 	fill_email_attachments(email.attachments)
@@ -83,9 +83,9 @@ func _on_Back_pressed():
 	get_parent().show_email_list()
 
 func _on_Deny_pressed():
-	EmailManager.flag_email(current_email, selected)
+	EmailManager.flag_email(current_email, "Denied", selected)
 	get_parent().show_email_list()
 
 func _on_Accept_pressed():
-	EmailManager.flag_email(current_email, [])
+	EmailManager.flag_email(current_email, "Approved", [])
 	get_parent().show_email_list()

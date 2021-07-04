@@ -12,9 +12,15 @@ func _ready():
 
 func _process(delta):
 	time = time + delta
+	
+	if EmailManager.flagged_all_email() and started:
+		started = false
+		run_dialog("Outro")
 
 func _on_dialog_end(timeline_name):
-	pass
+	print (timeline_name)
+	if timeline_name == "Outro.json":
+		WindowManager.open_window("Outro")
 	
 func _on_dialogic_signal(signal_name):
 	if signal_name == "new_email":
@@ -23,8 +29,10 @@ func _on_dialogic_signal(signal_name):
 func reset():
 	time = 0
 	wrong = 0
+	started = true
 
 func start_game():
+	started = true
 	reset()
 	EmailManager.load_emails()
 	run_dialog("Intro")
@@ -38,6 +46,13 @@ func run_dialog(name):
 	dialogic.connect("timeline_end", self, '_on_dialog_end')
 	dialogic.connect("dialogic_signal", self, '_on_dialogic_signal')
 
-func _on_email_flag(correct):
-	if not correct:
+func _on_email_flag(status, correct):
+	if status == "Approved" and not correct:
 		wrong = wrong + 1
+		# Start dialog with hacker
+	if status == "Denied" and not correct:
+		# Start dialog with email admin
+		pass
+	else:
+		# First time start dialog with email admin congratuating you on the correct answer
+		pass

@@ -45,18 +45,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="New" type="Label" parent="Header"]
+[node name="Status" type="Label" parent="Header"]
 margin_top = 2.0
-margin_right = 25.0
+margin_right = 70.0
 margin_bottom = 19.0
-rect_min_size = Vector2( 25, 0 )
+rect_min_size = Vector2( 70, 0 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Status"
 align = 1
 
 [node name="From" type="Label" parent="Header"]
-margin_left = 35.0
+margin_left = 80.0
 margin_top = 2.0
-margin_right = 185.0
+margin_right = 230.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 150, 0 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -64,7 +65,7 @@ text = "From"
 clip_text = true
 
 [node name="Subject" type="Label" parent="Header"]
-margin_left = 195.0
+margin_left = 240.0
 margin_top = 2.0
 margin_right = 1265.0
 margin_bottom = 19.0

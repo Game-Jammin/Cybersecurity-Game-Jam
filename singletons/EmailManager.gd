@@ -6,7 +6,7 @@ onready var email_folder = "res://emails"
 var issue_flag = "<flag>"
 
 var emails
-var email = {'received': false, 'new': true, 'flagged': false,
+var email = {'received': false, 'new': true, 'flagged': 'Pending',
  'from': '', 'subject': '', 'body_lines': [], 'attachments': [], 'issues': []}
 
 var current_email
@@ -75,7 +75,13 @@ func receive_email():
 	if current_email < emails.size():
 		emails[current_email].received = true
 		current_email = current_email + 1
-	
+
+func flagged_all_email():
+	for email in emails:
+		if email.flagged == "Pending":
+			return false
+	return true
+
 func new_email_num():
 	var num = 0
 	for email in emails:
@@ -83,8 +89,8 @@ func new_email_num():
 			num = num + 1
 	return num 
 
-func flag_email(email, selected):
-	email.flagged = true
+func flag_email(email, status, selected):
+	email.flagged = status
 	var correct = true
 	
 	for issue in email.issues:
@@ -95,7 +101,7 @@ func flag_email(email, selected):
 		if not select in email.issues:
 			correct = false
 	
-	emit_signal("email_flagged", correct)
+	emit_signal("email_flagged", status, correct)
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
