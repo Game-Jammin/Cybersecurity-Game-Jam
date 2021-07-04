@@ -1,5 +1,11 @@
 extends Control
 
+func _process(delta):
+	if GameManager.started:
+		$VBoxContainer/Start.text = "Restart"
+	else:
+		$VBoxContainer/Start.text = "Start"
+
 func _on_Start_pressed():
 	get_parent()._on_Close_pressed()
 	GameManager.start_game()

@@ -4,18 +4,24 @@
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "You will have to decide if the email should be accepted or denied"
+			"text": "This is the email view screen. Here you can see the deails of the emails. Such as the body text and attachments."
 		},
 		{
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Luckly it looks like this one doesn't have anything suspisus with it. You can go ahead and accept it."
+			"text": "In this screen you will have to make the dissicion as to if the email should be accepted or denied into the system."
+		},
+		{
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Luckly it looks like this one doesn't have anything wrong with it. You can go ahead and accept it."
 		}
 	],
 	"metadata": {
 		"dialogic-version": "1.2",
 		"file": "timeline-1625354586.json",
-		"name": "First"
+		"name": "EmailView"
 	}
 }

@@ -6,6 +6,9 @@ var dialogic
 var time = 0
 var wrong = 0
 
+var email_list_opened = false
+var email_view_opened = false
+
 func _ready():
 	randomize()
 	EmailManager.connect('email_flagged', self, '_on_email_flag')
@@ -27,6 +30,8 @@ func _on_dialogic_signal(signal_name):
 		EmailManager.receive_email()
 
 func reset():
+	email_list_opened = false
+	email_view_opened = false
 	time = 0
 	wrong = 0
 	started = true
@@ -56,3 +61,13 @@ func _on_email_flag(status, correct):
 	else:
 		# First time start dialog with email admin congratuating you on the correct answer
 		pass
+
+func email_list():
+	if not email_list_opened and started:
+		email_list_opened = true
+		run_dialog("EmailList")
+
+func email_view():
+	if not email_view_opened and started:
+		email_view_opened = true
+		run_dialog("EmailView")

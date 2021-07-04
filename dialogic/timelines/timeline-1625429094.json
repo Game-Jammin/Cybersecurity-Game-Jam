@@ -1,0 +1,27 @@
+{
+	"events": [
+		{
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This is the email inbox list."
+		},
+		{
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Here you can see what emails are still pending approval."
+		},
+		{
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Go ahead and click the first email in the list."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2",
+		"file": "timeline-1625429094.json",
+		"name": "EmailList"
+	}
+}
