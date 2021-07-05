@@ -1,0 +1,10 @@
+{
+	"from": "Tessa Carter (tessa.carter@gmail.com)",
+	"subject": "Test subject 2",
+	"body": "
+	Hello,
+
+	Please find attached your requested file.",
+"attachments": ["<flag>virus.xls"],
+"type": "Attachment"
+}
