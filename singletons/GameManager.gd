@@ -55,10 +55,10 @@ func run_dialog(name):
 
 func _on_email_flag(status, correct):
 	if status == "Approved" and not correct:
-		hacked = true
 		# Start dialog with hacker
 		run_dialog("Hacked1")
-	if status == "Denied" and not correct:
+		hacked = true
+	elif status == "Denied" and not correct:
 		# Start dialog with email admin
 		run_dialog("Wrong1")
 	else:

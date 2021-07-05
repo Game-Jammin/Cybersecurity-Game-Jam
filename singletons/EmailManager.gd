@@ -102,15 +102,12 @@ func flag_email(email, status, selected):
 	email.flagged = status
 	var correct = true
 	
+	# Sort the two arrays
+	email.issues.sort()
+	selected.sort()
 	
-	
-	for issue in email.issues:
-		if not issue in selected:
-			correct = false
-	
-	for select in selected:
-		if not select in email.issues:
-			correct = false
+	if email.issues != selected:
+		correct = false
 	
 	emit_signal("email_flagged", status, correct)
 	timer.start(randf() * 5.0 + 2.0)
