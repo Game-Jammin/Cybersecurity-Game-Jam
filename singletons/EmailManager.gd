@@ -102,6 +102,8 @@ func flag_email(email, status, selected):
 	email.flagged = status
 	var correct = true
 	
+	
+	
 	for issue in email.issues:
 		if not issue in selected:
 			correct = false

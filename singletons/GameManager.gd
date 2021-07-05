@@ -4,7 +4,7 @@ var started
 var dialogic
 
 var time = 0
-var wrong = 0
+var hacked = false
 
 var email_list_opened = false
 var email_view_opened = false
@@ -34,7 +34,7 @@ func reset():
 	email_list_opened = false
 	email_view_opened = false
 	time = 0
-	wrong = 0
+	hacked = false
 	started = true
 	tutorial_dialogs = ['Subject', 'Misspelling', 'Attachment', 'Signature', 'Links', 'From']
 
@@ -55,12 +55,14 @@ func run_dialog(name):
 
 func _on_email_flag(status, correct):
 	if status == "Approved" and not correct:
-		wrong = wrong + 1
+		hacked = true
 		# Start dialog with hacker
+		run_dialog("Hacked1")
 	if status == "Denied" and not correct:
 		# Start dialog with email admin
-		pass
+		run_dialog("Wrong1")
 	else:
+		hacked = false
 		# First time start dialog with email admin congratuating you on the correct answer
 		pass
 
@@ -77,5 +79,5 @@ func email_view(email):
 			run_dialog("EmailView")
 		
 		if type in tutorial_dialogs:
-			tutorial_dialogs.remove(type)
+			tutorial_dialogs.erase(type)
 			run_dialog(type)

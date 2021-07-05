@@ -69,6 +69,8 @@ func _process(_delta):
 	deny_button.disabled = selected.size() == 0
 
 func _on_gui_input(event, element):
+	if current_email.flagged != "Pending":
+		return
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:
 			if event.pressed:

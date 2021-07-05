@@ -44,7 +44,7 @@
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
 			"portrait": "Bear Thinking",
-			"text": "The hacker now has access to our system. You must close the popup quickly and classify the next emails correctly to fix the problem."
+			"text": "Hmm... The hacker now has access to our system. In order to fix this you must close the popup quickly and classify the next emails correctly."
 		}
 	],
 	"metadata": {
