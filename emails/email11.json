@@ -1,9 +1,9 @@
 {
-"from" : "youwin@youwin.com"
-"subject": "You Won!"
+"from" : "youwin@youwin.com",
+"subject": "You Won!",
 "body" : "<flag>Congratulations Mr. [null]!
 
-You have won an all expenses paid trip to the center of the Earth! Visit our website at (hyperlink) to claim your tickets!"
+You have won an all expenses paid trip to the center of the Earth! Visit our website at (hyperlink) to claim your tickets!",
 "attachments": [],
-"type": "Misspelling"
+"type": "Misspelling",
 }

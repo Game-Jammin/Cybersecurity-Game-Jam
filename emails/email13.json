@@ -1,10 +1,10 @@
 {
-"from" : "<flag>internationalrevenueservice@wfnwkvnw.com"
-"subject" : "You owe significant sums to the IRS"
+"from" : "<flag>internationalrevenueservice@wfnwkvnw.com",
+"subject" : "You owe significant sums to the IRS",
 "body" : "Warning! You owe more than $30,000 USD to the IRS from the past three tax years!
 <flag>As soon as possible please provide a bank account number and routing number to pay for what is owed.
 If you do not respond with this information in the next 24 hours your license,
-car, and house may be subject to repossession."
+car, and house may be subject to repossession.",
 "attachments": [],
-"type": "From"
+"type": "From",
 }

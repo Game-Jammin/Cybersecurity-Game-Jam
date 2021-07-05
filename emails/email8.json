@@ -1,13 +1,15 @@
 {
-"from" : "<flag>Oliver Martin (oliver.martin@[website].com)"
-"subject" : "Re : Confirmation"
+"from" : "<flag>Oliver Martin (oliver.martin@[website].com)",
+"subject" : "Re : Confirmation",
 "body" : "Good afternoon,
 
-I Apologize for the inconvenience but due to a technical error, your confirmation information wasn’t properly documented. To fix this issue please go to
+I Apologize for the inconvenience but due to a technical error,
+your confirmation information wasn’t properly documented.
+To fix this issue please go to
 
 *hyper link* [webite].com/confirmation
 
-<flag>Signature [Oliver Marsh]"
+<flag>Signature [Oliver Marsh]",
 "attachments": [],
-"type": "From"
+"type": "From",
 }

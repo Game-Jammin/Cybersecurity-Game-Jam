@@ -1,0 +1,7 @@
+{
+"from" : "awesker@hexsoft.com",
+"subject": "Files to Print",
+"body": "Please print these files before coming to the morning meeting.",
+"attachments": ["MontlyReport.pdf"],
+"type": "Attachment",
+}

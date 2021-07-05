@@ -48,7 +48,6 @@ func read_email_file(file_path):
 # parse the json data and genete and email object
 func generate_new_email(json):
 	var new_email = email.duplicate(true)
-	
 	# Test if from and subject have issue flag
 	if issue_flag in json.from:
 		new_email.issues.append("from")
