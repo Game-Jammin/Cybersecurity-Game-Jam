@@ -17,13 +17,19 @@
 		{
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
-			"portrait": "Bear Anger",
-			"text": "You can just go ahead and deny any advertisements"
+			"portrait": "Bear Normal Talk",
+			"text": "Looks like this one is asking for some sensitive information."
+		},
+		{
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_001",
+			"portrait": "Bear Normal Talk",
+			"text": "It's not a good idea to give that stuff over email. Better deny this one"
 		}
 	],
 	"metadata": {
 		"dialogic-version": "1.2",
-		"file": "timeline-1625452634.json",
-		"name": "Advertisement"
+		"file": "timeline-1625454085.json",
+		"name": "Information"
 	}
 }

@@ -36,7 +36,7 @@ func reset():
 	time = 0
 	hacked = false
 	started = true
-	tutorial_dialogs = ['Subject', 'Misspelling', 'Attachment', 'Signature', 'Links', 'From', 'Advertisement']
+	tutorial_dialogs = ['Subject', 'Misspelling', 'Attachment', 'Signature', 'Links', 'From', 'Advertisement', 'Information']
 
 func start_game():
 	started = true
