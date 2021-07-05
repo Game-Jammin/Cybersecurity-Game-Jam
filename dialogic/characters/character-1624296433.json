@@ -9,12 +9,36 @@
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 0,
-	"offset_y": 0,
+	"offset_y": -150,
 	"portraits": [
 		{
 			"name": "Default",
 			"path": ""
+		},
+		{
+			"name": "Bear Anger",
+			"path": "res://art/Dialog/Bear Anger.png"
+		},
+		{
+			"name": "Bear Boastful",
+			"path": "res://art/Dialog/Bear Boastful.png"
+		},
+		{
+			"name": "Bear Normal Talk",
+			"path": "res://art/Dialog/Bear Normal Talk.png"
+		},
+		{
+			"name": "Bear Normal",
+			"path": "res://art/Dialog/Bear Normal.png"
+		},
+		{
+			"name": "Bear Surprised",
+			"path": "res://art/Dialog/Bear Surprised.png"
+		},
+		{
+			"name": "Bear Thinking",
+			"path": "res://art/Dialog/Bear Thinking.png"
 		}
 	],
-	"scale": 100
+	"scale": 20
 }

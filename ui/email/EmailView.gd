@@ -19,6 +19,7 @@ func _ready():
 	subject.connect("gui_input", self, "_on_gui_input", ['subject'])
 
 func load_email(email):
+	GameManager.email_view(email)
 	current_email = email
 	selected.clear()
 	email.new = false

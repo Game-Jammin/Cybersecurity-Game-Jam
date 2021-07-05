@@ -1,6 +1,25 @@
 {
 	"events": [
-
+		{
+			"action": "join",
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Bear Normal",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_001",
+			"portrait": "Bear Normal Talk",
+			"text": "Oh dear, There are lots of spelling mistakes in this one. Better flag this one as denied"
+		}
 	],
 	"metadata": {
 		"dialogic-version": "1.2",

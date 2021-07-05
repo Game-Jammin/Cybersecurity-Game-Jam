@@ -1,27 +1,55 @@
 {
 	"events": [
 		{
+			"action": "join",
+			"character": "character-1624296442.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Hacker Talk",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
 			"character": "character-1624296442.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "HAHA! I have gained access to your system. "
 		},
 		{
+			"action": "join",
 			"character": "character-1624296433.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Oh, no. The email was clissifed incorrectly!"
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Bear Anger",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
 		},
 		{
-			"character": "",
+			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Bear Anger",
+			"text": "Oh, no. The email was classified incorrectly!"
+		},
+		{
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_001",
+			"portrait": "Bear Thinking",
 			"text": "The hacker now has access to our system. You must close the popup quickly and classify the next emails correctly to fix the problem."
 		}
 	],
 	"metadata": {
 		"dialogic-version": "1.2",
 		"file": "timeline-1625346040.json",
-		"name": "incorrect1"
+		"name": "Hacked1"
 	}
 }

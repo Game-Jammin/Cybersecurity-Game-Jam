@@ -18,18 +18,12 @@
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
 			"portrait": "Bear Normal Talk",
-			"text": "Looks like this email has some links do some suspesiuls looking websites."
-		},
-		{
-			"character": "character-1624296433.json",
-			"event_id": "dialogic_001",
-			"portrait": "Bear Normal Talk",
-			"text": "Better select those lines and deny this email."
+			"text": "The email address this email is from seems a little off. Better mark it denied"
 		}
 	],
 	"metadata": {
 		"dialogic-version": "1.2",
-		"file": "timeline-1625346486.json",
-		"name": "Links"
+		"file": "timeline-1625435842.json",
+		"name": "From"
 	}
 }

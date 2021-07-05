@@ -1,5 +1,5 @@
 {
-	"from": "Example@mail1.com",
+	"from": "Lane Black (lane.black@grnail.com)",
 	"subject": "Test subject 1",
 	"body": "Hi [Name],
 I hope you’re having a wonderful day!
@@ -12,8 +12,6 @@ If you have any questions about the product, please respond to this email or use
 Thank you,
 
 [Your signature]",
-	"attachments": [
-		"file1.exe",
-		"file2.txt"
-	]
+	"attachments": [],
+	"type": "From"
 }

@@ -4,7 +4,6 @@ func _ready():
 	show_email_list()
 
 func show_single_email():
-	GameManager.email_view()
 	$EmailList.visible = false
 	$EmailView.visible = true
 

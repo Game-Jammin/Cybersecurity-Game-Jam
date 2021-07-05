@@ -9,6 +9,8 @@ var wrong = 0
 var email_list_opened = false
 var email_view_opened = false
 
+var tutorial_dialogs
+
 func _ready():
 	randomize()
 	EmailManager.connect('email_flagged', self, '_on_email_flag')
@@ -21,7 +23,6 @@ func _process(delta):
 		run_dialog("Outro")
 
 func _on_dialog_end(timeline_name):
-	print (timeline_name)
 	if timeline_name == "Outro.json":
 		WindowManager.open_window("Outro")
 	
@@ -35,6 +36,7 @@ func reset():
 	time = 0
 	wrong = 0
 	started = true
+	tutorial_dialogs = ['Subject', 'Misspelling', 'Attachment', 'Signature', 'Links', 'From']
 
 func start_game():
 	started = true
@@ -67,7 +69,13 @@ func email_list():
 		email_list_opened = true
 		run_dialog("EmailList")
 
-func email_view():
-	if not email_view_opened and started:
-		email_view_opened = true
-		run_dialog("EmailView")
+func email_view(email):
+	var type = email.type
+	if started:
+		if not email_view_opened:
+			email_view_opened = true
+			run_dialog("EmailView")
+		
+		if type in tutorial_dialogs:
+			tutorial_dialogs.remove(type)
+			run_dialog(type)

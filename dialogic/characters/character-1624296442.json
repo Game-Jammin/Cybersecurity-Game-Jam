@@ -14,6 +14,14 @@
 		{
 			"name": "Default",
 			"path": ""
+		},
+		{
+			"name": "Hacker Talk",
+			"path": "res://art/Dialog/Hacker Talk.png"
+		},
+		{
+			"name": "Hacker Idle",
+			"path": "res://art/Dialog/Hacker Idle.png"
 		}
 	],
 	"scale": 100

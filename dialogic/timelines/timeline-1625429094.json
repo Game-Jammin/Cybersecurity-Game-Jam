@@ -1,21 +1,35 @@
 {
 	"events": [
 		{
+			"action": "join",
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Bear Normal",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Bear Normal Talk",
 			"text": "This is the email inbox list."
 		},
 		{
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Bear Normal Talk",
 			"text": "Here you can see what emails are still pending approval."
 		},
 		{
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Bear Normal Talk",
 			"text": "Go ahead and click the first email in the list."
 		}
 	],

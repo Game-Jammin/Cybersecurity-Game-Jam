@@ -1,21 +1,35 @@
 {
 	"events": [
 		{
+			"action": "join",
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Bear Normal",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Bear Normal Talk",
 			"text": "This is the email view screen. Here you can see the deails of the emails. Such as the body text and attachments."
 		},
 		{
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Bear Normal Talk",
 			"text": "In this screen you will have to make the dissicion as to if the email should be accepted or denied into the system."
 		},
 		{
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Bear Normal Talk",
 			"text": "Luckly it looks like this one doesn't have anything wrong with it. You can go ahead and accept it."
 		}
 	],

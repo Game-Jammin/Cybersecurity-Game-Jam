@@ -1,15 +1,29 @@
 {
 	"events": [
 		{
+			"action": "join",
+			"character": "character-1624296433.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Bear Normal",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Bear Normal Talk",
 			"text": "Welcome to your first day at your new job!"
 		},
 		{
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Bear Normal",
 			"text": "Recently we have been getting alot of phsings emails. I am going to go over some of the basics to help you identify them."
 		},
 		{
@@ -19,7 +33,7 @@
 		{
 			"character": "character-1624296433.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Bear Normal Talk",
 			"text": "Hey look. There comes your first email! You must be popular"
 		}
 	],

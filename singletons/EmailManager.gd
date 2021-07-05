@@ -7,12 +7,18 @@ var issue_flag = "<flag>"
 
 var emails
 var email = {'received': false, 'new': true, 'flagged': 'Pending',
- 'from': '', 'subject': '', 'body_lines': [], 'attachments': [], 'issues': []}
+ 'from': '', 'subject': '', 'body_lines': [], 'attachments': [], 'issues': [], 'type': ''}
 
 var current_email
 
+var timer
+
 func _ready():
 	load_emails()
+	timer = Timer.new()
+	timer.one_shot = true
+	timer.connect("timeout", self, 'receive_email')
+	add_child(timer)
 
 # Get a list of all email files in the 
 func load_emails():
@@ -69,10 +75,13 @@ func generate_new_email(json):
 		new_email.attachments.append(attachment.replace("<flag>", ""))
 		attachemnt_number = attachemnt_number + 1
 	
+	new_email.type = json.type
+	
 	emails.append(new_email)
 
 func receive_email():
 	if current_email < emails.size():
+		# TODO: Play sound of email arriving
 		emails[current_email].received = true
 		current_email = current_email + 1
 
@@ -102,7 +111,4 @@ func flag_email(email, status, selected):
 			correct = false
 	
 	emit_signal("email_flagged", status, correct)
-
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		receive_email()
+	timer.start(randf() * 5.0 + 2.0)

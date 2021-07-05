@@ -2,7 +2,7 @@
 
 [ext_resource path="res://art/Placeholders/Select.png" type="Texture" id=1]
 [ext_resource path="res://ui/email/Select.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://art/Placeholders/Attachment.png" type="Texture" id=3]
 
 [node name="Attachment" type="Control"]
 margin_left = 402.0
